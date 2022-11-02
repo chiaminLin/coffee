@@ -1,207 +1,224 @@
 *{margin: 0;padding: 0;}
 html{
     box-sizing:border-box;
+    font-size: 36px;
 }
+
 *,*:after,*::before{
     box-sizing:inherit;
 }
 
+/* header */
 .header{
     max-width: 1440px;
     width: 1440px;
     height: 145px;
-    margin:auto;
+    margin:0 auto auto auto;
     display: flex;
     background-color: #c6ac8f;
-    border: 2px solid green;
 }
+
+/* header左邊 */
 .header-left{
     width: 182px;
     height: 132px;
     margin-left: 74px;
-    border: 2px solid aqua;
 }
-.storeName{
-    width: 229px;
-    height: 52px;
-    line-height:52px;
-    color: #073b4c;
-    font-size: 36px;
-    font-weight: bold;
-    /*font-family:;*/
-    border: 2px solid  darkcyan;
-}
-.food{
-    width: 161px;
-    height: 29px;
-    line-height:29px;
-    color: #073b4c;
-    font-size: 20px;
-    /*font-family:;*/
-    border: 2px solid  forestgreen;
-}
+
+/* header右邊導覽列 */
 .nav{
-    width: 492px;
+    width: 567px;
     height: 32px;
-    margin: 56px 59px 57px auto;
+    margin: 55px 59px 55px auto;
     display: flex;
     align-items: center; 
     justify-content: flex-end;
-    border: 2px solid palevioletred;
 }
+
 .nav-list{
     display:flex;  /* list並排 */
     margin: 0;
     padding: 0;
     align-items: center;
-    border: 1px solid maroon;
 }
+
 .nav-list-item{
    
     list-style: none;  /* li的圓圈符號移除 */ 
-    
     margin-right:26px;
     line-height: 32px;
-    border: 1px solid wheat;
 }
+
 .nav-list-photoitem{
     width: 32px;
     height: 32px;
     list-style: none;  /* li的圓圈符號移除 */ 
-    
-    border: 1px solid royalblue;
 }
 
 .nav-list-item-link{
-    font-size: 20px;
+    font-size: 0.67em;
     font-weight: bold;
     color: #073b4c;
     display: block;  /* 用成可以換行、調整大小、有box屬性 */
     text-decoration: none;
 }
 
-
+/* 網頁內容 */
 .container{
     max-width: 1440px;                                 /*設定最大寬度*/
-
-    height: 1680px;
+    height: 100vh;
     margin:auto;                                      /* 水平置中指令 */
-    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
 }
 
+/* 內容區(固定footer在最底下) */
+.contnet-area{
+    display: flex;
+    /* flex:1; */
+}
+/* 內容最上層 */
 .top{
     width:100%;
     height: 429px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: 1px solid rebeccapurple;
 }
+
 .top-title{
     width: 100%;
     height: 52px;
-    font-size: 36px;
+    font-size: 1em;
     font-weight: bold;
     color: #073b4c;
     text-align: center;
+    line-height: 52px;
     margin: 46px;
-    border: 1px solid orangered;
 }
+
 .top-content{
     width: 1236px;
     display: flex;
     justify-content: space-between;
-
 }
+
 .top-content-photo{
     width: 365px;
     height: 283px;
 }
+
+/* 中間內容 */
 .middle{
     width: 100%;
     height: 453px;
     margin-top: 114px;
     display: flex;
     justify-content: center;
-    border: 1px solid aquamarine;
 }
+
+/* 內容最下面 */
 .bottom{
     width: 100%;
     height: 453px;
     margin-top: 114px;
     display: flex;
     justify-content: center;
-    border: 1px solid aquamarine;
 }
+
 .middle-photo,.bottom-photo{
     width: 618px;
     height: 453px;
-    border: 1px solid rosybrown;
 }
+
 .middle-content,.bottom-content{
     width: 618px;
     height: 453px;
     background-color: #EAE0D5;
-    border: 1px solid tomato;
 }
+
 .middle-content-title,.bottom-content-title{
     width: 396px;
     height: 104px;
-    font-size: 36px;
+    font-size: 1em;
     font-weight: bold;
     line-height: 52px;
     color:#073b4c;
     margin:89px 111px 21px 111px;
 }
+
+.middle-content-text,.bottom-content-text{
+    width: 396px;
+    height: 60px;
+    font-size: 0.44em;
+    line-height: 30px;
+    color:black;
+    margin:21px 111px 57px 111px;
+}
+
+.middle-content-button,.bottom-content-button{
+    width: 118px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 111px 111px auto;
+    background-color: #c6ac8f;
+}
+
+.middle-content-button-link,.bottom-content-button-link{
+    font-size: 0.44em;
+    color:#ffffff;
+    text-decoration: none;
+}
+
+/* 水平線 */
 .line{
     width:396px;
     height: 1px;
     background-color: black;
     margin: 0 auto 0 auto;
 }
-.middle-content-text,.bottom-content-text{
-    width: 396px;
-    height: 60px;
-    font-size: 16px;
-    line-height: 30px;
-    color:black;
-    margin:21px 111px 57px 111px;
-}
-.middle-content-button,.bottom-content-button{
-    width: 118px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    margin:0 111px 111px auto;
-    background-color: #c6ac8f;
-}
-.middle-content-button-link,.bottom-content-button-link{
-    font-size: 16px;
-    color:#ffffff;
-    text-decoration: none;
-}
 
-
-
+/* 圖片大小 */
 .header-photo-1{
     width: 182px;
     height: 132px;
 }
+
 .content-photo-1{
     width: 365px;
     height: 282px;
-
 }
 
-.content-photo-2
-{
+.content-photo-2{
     width: 618px;
     height: 453px;
 }
+/* footer */
 .footer{
     width: 1440px;
     height: 205px;
-    margin: auto;
+    margin: auto auto 0 auto;
     background-color: #c6ac8f;
-    border: 1px solid pink;
+    border: 0.1px solid #c6ac8f;
+}
+
+.footer-icon{
+    display: flex;
+    margin: 40px auto 0 auto;
+    justify-content: space-between;
+    width: 134px;
+    height: 30px;
+}
+
+.footer-content{
+    width: 398px;
+    height: 64px;
+    margin: 18px auto 52px auto;
+    font-size: 0.44em;
+    font-weight: bold;
+    color: #073b4c;
+    text-align: center;
+    line-height: 32px;
 }
