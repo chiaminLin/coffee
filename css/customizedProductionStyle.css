@@ -64,6 +64,10 @@ html{
     text-decoration: none;
 }
 
+.nav-list-item-link:hover{
+    color:#ffffff;
+}
+
 /* 網頁內容 */
 .container{
     max-width: 1440px;                                 /*設定最大寬度*/
@@ -194,6 +198,7 @@ hr{
     font-size: 0.66em;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .result-title {
