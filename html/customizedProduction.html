@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>The Sweeter</title>
+    <link rel="icon" href="../img/logo.jpg">
     <link rel="stylesheet" href="../css/customizedProductionStyle.css">
     <link rel="stylesheet" href="../css/normalize.css">
     <!-- 字形 -->
@@ -41,7 +41,7 @@
                         <a href="" class="nav-list-item-link">顧客回饋</a>
                     </li>
                     <li class="nav-list-photoitem">
-                        <img src="./img/index_icon-people.png" alt="">
+                        <img src="../img/index_icon-people.png" alt="">
                     </li>
                 </ul>
             </nav>
@@ -49,12 +49,177 @@
             
         </header>
 
+        <!-- content-area -->
         <div class="content-area">
+            <div class="top-area">
+                <div class="top-text">
+                    <p>滿足您的各種喜好，</p>
+                    <p>開始創作您的專屬飲料！</p>
+                </div>
+                <div class="top-photo">
+                    <img src="../img/DIY_coffee.webp" alt="">
+                </div>
+            </div>
+                       
+            <hr>
 
+            <div class="each-area">
+                <div class="milk-title">
+                    <p>奶類客製化</p>
+                </div>
 
-          
+                <div class="milk-icon">
+                    <div class="milk-almond-area">
+                        <label for="milk-almond" class="milk-almond">
+                            <div class="icon-bg">
+                                <img src="../img/DIY_almond.png" alt="植物杏仁奶">
+                            </div>
+                            <div class="icon-text"> 
+                                <p>植物杏仁奶</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="milk-almond-area">
+                        <label for="milk-oat" class="milk-oat">
+                            <div class="icon-bg" >
+                                <img src="../img/DIY_oat.png" alt="植物燕麥奶">
+                            </div>
+                            <div class="icon-text"> 
+                                <p>植物燕麥奶</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="milk-original-area">
+                        <label for="milk-original" class="milk-original">
+                            <div class="icon-bg">
+                                <img src="../img/DIY_milk.png" alt="純鮮奶">
+                            </div>
+                            <div class="icon-text"> 
+                                <p>純鮮奶</p>
+                            </div>
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- milk-area radio 控制 -->
+            <div class="all-radio">
+                <input type="radio" id="milk-almond" name="milk" value="杏仁奶">
+                <input type="radio" id="milk-oat" name="milk" value="燕麥奶">
+                <input type="radio" id="milk-original" name="milk" value="">
+            </div>
+
+            <hr>
+
+            <div class="each-area">
+                <div class="coffee-title">
+                    <p>濃縮客製化</p>
+                </div>
+
+                <div class="coffee-icon">
+                    <div class="coffee-area">
+                        <label for="coffee-origin" class="coffee-origin">
+                            <div class="icon-bg">
+                                <img src="../img/DIY_coffee-beans.png" alt="濃縮咖啡">
+                            </div>
+                            <div class="icon-text"> 
+                                <p class="text">濃縮咖啡</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="coffee-special-area">
+                        <label for="coffee-special" class="coffee-special">
+                            <div class="icon-bg">
+                                <img src="../img/DIY_special-beans.png" alt="季節限定特選濃縮">
+                            </div>
+                            <div class="icon-text"> 
+                                <p>季節限定特選濃縮</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- coffee-area radio 控制 -->
+            <div class="all-radio">
+                <input type="radio" id="coffee-origin" name="coffee" value="">
+                <input type="radio" id="coffee-special" name="coffee" value="當季特調">
+            </div>
+
+            <hr>
+
+            <div class="each-area">
+                <div class="sauce-title">
+                    <p>糖漿客製化</p>
+                </div>
+
+                <div class="sauce-icon">
+                    <div class="sauce-area">
+                        <label for="sauce-origin" class="sauce-origin" >
+                            <div class="icon-bg">
+                                <img src="../img/DIY_chocolate.png" alt="可可糖漿">
+                            </div>
+                            <div class="icon-text"> 
+                                <p>可可糖漿</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="sauce-special-area">
+                        <label for="sauce-special" class="sauce-special">
+                            <div class="icon-bg">
+                                <img src="../img/DIY_caramel.png" alt="焦糖糖漿">
+                            </div>
+                            <div class="icon-text"> 
+                                <p>焦糖糖漿</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-area">
+                <button id="doDiy">製作特調</button>
+            </div>
+
+            <!-- sauce-area radio 控制 -->
+            <div class="all-radio">
+                <input type="radio" id="sauce-origin" name="sauce" value="可可">
+                <input type="radio" id="sauce-special" name="sauce" value="焦糖">
+            </div>
+
+            <hr>
+
+            <div class="each-area">
+                <div class="result-title">
+                    <p>您的專屬商品為</p>
+                </div>
+
+                <div class="result-name">
+                    <span id="result-name">（特調產生中）</span>
+                </div>
+
+                <div class="result-content">
+                    <span id="result-content">（秘方產生中）</span>
+                </div>
+
+                <div class="result-photo">
+                    <img src="../img/DIY_latte.png" alt="特調結果">
+                </div>
+
+                <div class="hint">
+                    <span>請將此畫面截圖保存，於親臨門市時提供給店員參考您的特調秘訣</span>
+                </div>
+
+            </div>
 
         </div>
+
+        
 
 
         <footer class="footer">
@@ -62,13 +227,72 @@
                 <a href=""><img src="../img/index_icon-fb.png" alt="none"></a>
                 <a href=""><img src="../img/index_icon-ig.png" alt="none"></a>
             </div>
-            <div class="footer-content">聯絡我們：thesweeter.service@gmail.com<br>Copyright The Sweeter-Cofe&Dessert. 202209.
+            <div class="footer-content">聯絡我們：thesweeter.service@gmail.com<br>Copyright &copy; The Sweeter - Cofe & Dessert. 202209.
             </div>
         </footer>
 
     </div>
 
+    <!-- script -->
 
+    <!--載入jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--載入jQuery UI 1.11.4-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            var milkContent;
+            var milkLableName;
+            var coffeeContent;
+            var coffeeLableName;
+            var sauceContent;
+            var sauceLableName;
+
+            $("input[type='radio'][name='milk']").change(function () {
+                if(milkLableName) {
+                    $(labelName).children(".icon-bg").css("background-color", "#073b4c");
+                }
+                milkLableName = "." +  $(this).attr('id');
+                $(milkLableName).children(".icon-bg").css("background-color", "#c6ac8f");
+
+                milkContent = $(milkLableName).children(".icon-text").children("p").html();
+            });
+
+            $("input[type='radio'][name='coffee']").change(function () {
+                if(coffeeLableName) {
+                    $(coffeeLableName).children(".icon-bg").css("background-color", "#073b4c");
+                }
+                coffeeLableName = "." +  $(this).attr('id');
+                $(coffeeLableName).children(".icon-bg").css("background-color", "#c6ac8f");
+
+                coffeeContent = $(coffeeLableName).children(".icon-text").children("p").html();
+            });
+
+            $("input[type='radio'][name='sauce']").change(function () {
+                if(sauceLableName) {
+                    $(sauceLableName).children(".icon-bg").css("background-color", "#073b4c");
+                }
+                sauceLableName = "." +  $(this).attr('id');
+                $(sauceLableName).children(".icon-bg").css("background-color", "#c6ac8f");
+
+                sauceContent = $(sauceLableName).children(".icon-text").children("p").html();
+            });
+
+            $('#doDiy').click(function() {
+                var milk = $("input[type='radio'][name='milk']:checked").val();
+                var coffee = $("input[type='radio'][name='coffee']:checked").val();
+                var sauce = $("input[type='radio'][name='sauce']:checked").val();
+                
+                var result = sauce + milk + coffee + "拿鐵";
+                $('#result-name').html(result);
+
+                var resultContent = '（' + milkContent + '＋' + coffeeContent + '＋' + sauceContent + '）';
+                $('#result-content').html(resultContent);
+            })
+        })
+
+    </script>
 
 </body>
 
