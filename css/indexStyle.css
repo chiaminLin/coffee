@@ -68,7 +68,7 @@ html{
 /* 網頁內容 */
 .container{
     max-width: 1440px;                                 /*設定最大寬度*/
-    height: 100vh;
+    /* height: 100vh; */
     margin:auto;                                      /* 水平置中指令 */
     display: flex;
     flex-direction: column;
@@ -201,23 +201,25 @@ html{
 .footer{
     width: 1440px;
     height: 205px;
-    margin: auto auto 0 auto;
+    margin-top: 114px;
     background-color: #c6ac8f;
     border: 0.1px solid #c6ac8f;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;  
 }
 
 .footer-icon{
     display: flex;
-    margin: 40px auto 0 auto;
     justify-content: space-between;
     width: 134px;
-    height: 30px;
 }
 
 .footer-content{
     width: 398px;
     height: 64px;
-    margin: 18px auto 52px auto;
+    margin-top: 18px;
     font-size: 0.44em;
     font-weight: bold;
     color: #073b4c;

@@ -1,12 +1,12 @@
 *{margin: 0;padding: 0;}
 html{
-    box-sizing:border-box;
+    box-sizing: border-box;
     font-size: 36px;
     font-family: Noto Sans TC;
 }
 
 *,*:after,*::before{
-    box-sizing:inherit;
+    box-sizing: border-box;
 }
 
 /* header */
@@ -44,7 +44,6 @@ html{
 }
 
 .nav-list-item{
-   
     list-style: none;  /* li的圓圈符號移除 */ 
     line-height: 32px;
 }
@@ -68,16 +67,18 @@ html{
 /* 網頁內容 */
 .container{
     max-width: 1440px;                                 /*設定最大寬度*/
-    height: 100vh;
-    margin:auto;                                      /* 水平置中指令 */
+                                  /* 水平置中指令 */
     display: flex;
     flex-direction: column;
 }
 
 /* 內容區(固定footer在最底下) */
-.contnet-area{
+.content-area{
     display: flex;
-    /* flex:1; */
+    flex:1;
+    margin: 80px 50px;
+    flex-direction: column;
+    align-items: center;   
 }
 
 /* 圖片大小 */
@@ -86,27 +87,173 @@ html{
     height: 132px;
 }
 
+/* content-area */
+.top-area {
+    display: flex;
+    justify-content: center;
+    height: 428px;
+    width: 100%;
+    /* margin: 50px auto; */
+    margin-bottom: 80px;
+}
+
+.top-text {
+    font-size: 1em;
+    font-weight: bold;
+    color: #073b4c;
+    /* text-align: center; */
+    line-height: 52px;
+    align-self: center;
+    width: 500px;
+}
+
+.top-photo img {
+    width: 603px;
+    height: 428px;
+    border-radius: 10px;
+}
+
+hr{
+    width: 1103px;
+    color: #CDCBCB;
+}
+
+.each-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 80px auto;
+}
+
+.milk-icon, .coffee-icon, .sauce-icon {
+    display: flex;
+}
+
+.milk-title, .coffee-title, .sauce-title {
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: #073b4c;
+    margin-bottom: 80px;
+}
+
+.milk-almond-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 150px;
+}
+
+.milk-original-area, .coffee-special-area, .sauce-special-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sauce-area, .coffee-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 150px;
+}
+
+.icon-bg{
+    border-radius: 50%;
+    background-color: #073b4c;
+    width: 212px;
+    height: 212px;
+    display: flex;   
+    align-items: center; 
+    justify-content: center;
+}
+
+.icon-bg img {
+    width: 112px;
+    height: 112px;
+}
+
+.icon-text {
+    font-size: 0.66em;
+    color: #073b4c;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.button-area {
+    display: flex;
+    margin-bottom: 80px;
+}
+
+#doDiy {
+    width: 160px;
+    height: 55px;
+    text-align: center;
+    background-color: #c6ac8f;
+    color:#ffffff;
+    font-size: 0.66em;
+    border: none;
+    border-radius: 10px;
+}
+
+.result-title {
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: #073b4c;
+    margin-bottom: 50px;
+}
+
+.result-name {
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: #C6AC8F;
+    margin-bottom: 50px;
+}
+
+.result-content, .hint {
+    text-align: center;
+    font-size: 0.66em;
+    color: #073b4c;
+}
+
+.result-photo {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.result-photo img {
+    width: 240px;
+    height: 243px;
+}
+
+.all-radio {
+    display: none;
+}
+
 /* footer */
 .footer{
     width: 1440px;
     height: 205px;
-    margin: auto auto 0 auto;
     background-color: #c6ac8f;
     border: 0.1px solid #c6ac8f;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;  
 }
 
 .footer-icon{
     display: flex;
-    margin: 40px auto 0 auto;
     justify-content: space-between;
     width: 134px;
-    height: 30px;
 }
 
 .footer-content{
     width: 398px;
-    height: 64px;
-    margin: 18px auto 52px auto;
+    margin-top: 18px;
     font-size: 0.44em;
     font-weight: bold;
     color: #073b4c;
