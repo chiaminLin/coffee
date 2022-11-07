@@ -141,14 +141,16 @@ html {
 .contnent-decoration{
     width: 8px;
     height: 32px;
-    display:block;
-    margin-left: 311px;
+    margin-right: 20px;
+    margin-top: 10px;
     background-color: #c6ac8f;
 }
 .content-description{
-    width: 704px ;
-    height: 349px;
-    margin: 61px 25 0 auto;
+    width: 732px ;
+    height: 410px;
+    display: flex;
+    margin: 0px 25 0 auto;
+    padding-top: 61px;
 }
 .content-description-title{
     font-size: 0.67em;

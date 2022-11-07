@@ -251,7 +251,7 @@
 
             $("input[type='radio'][name='milk']").change(function () {
                 if(milkLableName) {
-                    $(labelName).children(".icon-bg").css("background-color", "#073b4c");
+                    $(milkLableName).children(".icon-bg").css("background-color", "#073b4c");
                 }
                 milkLableName = "." +  $(this).attr('id');
                 $(milkLableName).children(".icon-bg").css("background-color", "#c6ac8f");
