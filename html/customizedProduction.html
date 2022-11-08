@@ -284,11 +284,14 @@
                 var coffee = $("input[type='radio'][name='coffee']:checked").val();
                 var sauce = $("input[type='radio'][name='sauce']:checked").val();
                 
-                var result = sauce + milk + coffee + "拿鐵";
-                $('#result-name').html(result);
+                if(milk && coffee && sauce) {
+                    var result = sauce + milk + coffee + "拿鐵";
+                    $('#result-name').html(result);
 
-                var resultContent = '（' + milkContent + '＋' + coffeeContent + '＋' + sauceContent + '）';
-                $('#result-content').html(resultContent);
+                    var resultContent = '（' + milkContent + '＋' + coffeeContent + '＋' + sauceContent + '）';
+                    $('#result-content').html(resultContent);
+                }
+                
             })
         })
 

@@ -179,6 +179,14 @@ html{
     text-decoration: none;
 }
 
+.middle-content-button:hover {
+    background-color: #B19A7F;
+}
+
+.bottom-content-button:hover {
+    background-color: #B19A7F;
+}
+
 /* 水平線 */
 .line{
     width:396px;
