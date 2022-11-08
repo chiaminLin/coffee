@@ -201,6 +201,15 @@ hr{
     cursor: pointer;
 }
 
+#doDiy:hover {
+    background-color: #B19A7F;
+}
+
+#doDiy:active {
+    transform: scale(1);
+    box-shadow: inset 0 0 10px 1px #99856E;
+}
+
 .result-title {
     text-align: center;
     font-size: 1em;
