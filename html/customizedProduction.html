@@ -284,7 +284,7 @@
                 var coffee = $("input[type='radio'][name='coffee']:checked").val();
                 var sauce = $("input[type='radio'][name='sauce']:checked").val();
                 
-                if(milk && sauce) {
+                if($("input[type='radio'][name='milk']:checked").lenghth != 0 &&  $("input[type='radio'][name='coffee']:checked").lenghth != 0 && $("input[type='radio'][name='sauce']:checked").lenghth != 0) {
                     var result = sauce + milk + coffee + "拿鐵";
                     $('#result-name').html(result);
 
