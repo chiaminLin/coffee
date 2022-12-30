@@ -13,30 +13,36 @@ html{
 .header{
     max-width: 1440px;
     width: 1440px;
-    height: 145px;
+    height: 90px;
     margin:0 auto auto auto;
     display: flex;
     background-color: #c6ac8f;
 }
 
+.logo {
+    width: 116px;
+    height: 85px;
+}
+
 /* header左邊 */
 .header-left{
-    width: 182px;
-    height: 132px;
+    width: 116px;
+    height: 85px;
     margin-left: 74px;
 }
 
 /* header右邊導覽列 */
 .nav{
-    width: 567px;
-    height: 35px;
-    margin: 55px 59px 55px auto;
+    width: 400px;
+    height: 90px;
+    margin: 0 59px 0 auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .nav-list{
-    width:567px;
+    width:400px;
     display:flex;  /* list並排 */
     justify-content:space-between;
     padding: 0;
@@ -57,7 +63,7 @@ html{
 }
 
 .nav-list-item-link{
-    font-size: 0.67em;
+    font-size: 0.44em;
     font-weight: bold;
     color: #073b4c;
     display: block;  /* 用成可以換行、調整大小、有box屬性 */
@@ -250,7 +256,7 @@ hr{
 /* footer */
 .footer{
     width: 1440px;
-    height: 205px;
+    height: 155px;
     background-color: #c6ac8f;
     border: 0.1px solid #c6ac8f;
     display: flex;
