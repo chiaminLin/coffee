@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Sweeter</title>
+        <link rel="icon" href="../img/logo.jpg">
+        <link rel="stylesheet" href="../css/login.css">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <!-- 字形 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+    
+            <header class="header">
+    
+    
+                <div class="header-left">
+                    <a href="../index.html"><img class="logo" src="../img/logo.jpg" alt="none" class="header-photo-1"></a>
+                </div>
+    
+    
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-list-item">
+                            <a href="./product.html" class="nav-list-item-link">商品介紹</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./customizedProduction.html" class="nav-list-item-link">客製化商品</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="" class="nav-list-item-link">顧客回饋</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <img src="../img/cart.svg" alt="">
+                        </li>
+                        <li class="nav-list-photoitem">
+                            <img src="../img/login.svg" alt="">
+                        </li>
+                    </ul>
+                </nav>
+    
+    
+            </header>
+    
+            <!-- content-area -->
+            <div class="content-area">
+
+                <div class="title">
+                    <div class="signIn-title" id="signIn">
+                        <p id="signInP">Sign In</p>
+                        <hr id="signInHr"> 
+                    </div>
+
+                    <div class="newAccount-title" id="newAccount">
+                        <p id="newAccountP">New Account</p>
+                        <hr id="newAccountHr">
+                    </div>
+                </div>
+
+                <!-- sign in content -->
+                <div class="signInContent">
+                    <div class="inputArea">
+                        <input type="text" id="email" placeholder="Email/Phone">
+                        <input type="password" id="password" placeholder="Password">
+                    </div>
+
+                    <button type="button" id="login">Login</button>
+
+                    <div class="bottomArea">
+                        <div class="icon">
+                            <img src="../img/loginFb.svg" alt="Facebook" class="fb">
+                            <img src="../img/loginGoogle.svg" alt="Google">
+                        </div>
+
+                        <div class="forgottenPassword">
+                            <a href="">Forgotten Password?</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- new account content -->
+                <div class="newAccountContent">
+                    <div class="inputArea">
+                        <input type="text" id="name" placeholder="Name">
+                        <input type="text" id="email" placeholder="Email">
+                        <input type="text" id="phone" placeholder="Phone">
+                        <input type="password" id="password" placeholder="Password">
+                    </div>
+
+                    <button type="button" id="register">Register</button>
+
+                </div>
+
+            </div>
+
+
+
+    
+    
+            <footer class="footer">
+                <div class="footer-icon">
+                    <a href=""><img src="../img/index_icon-fb.png" alt="none"></a>
+                    <a href=""><img src="../img/index_icon-ig.png" alt="none"></a>
+                </div>
+                <div class="footer-content">聯絡我們：thesweeter.service@gmail.com<br>Copyright &copy; The Sweeter - Cofe & Dessert. 202209.
+                </div>
+            </footer>
+    
+        </div>
+    
+    <!-- script -->
+
+    <!--載入jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--載入jQuery UI 1.11.4-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // New Account(註冊)被按下時
+            $('#newAccount').click(function() {
+                $('#newAccountHr').css('visibility', 'visible'); 
+                $('#newAccountP').css('color', '#8E6E53');
+                $('#signInP').css('color', '#433E3F');
+                $('#signInHr').css('visibility', 'hidden');
+                $('.signInContent').css('display', 'none');
+                $('.newAccountContent').css('display', 'flex');
+            })
+
+            // LogIn(登入)被按下時
+            $('#signIn').click(function() {
+                $('#newAccountHr').css('visibility', 'hidden'); 
+                $('#newAccountP').css('color', '#433E3F');
+                $('#signInP').css('color', '#8E6E53');
+                $('#signInHr').css('visibility', 'visible');
+                $('.signInContent').css('display', 'flex');
+                $('.newAccountContent').css('display', 'none');
+            })
+
+
+        })
+
+    </script>
+    </body>
+</html>

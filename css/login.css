@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 36px;
+    font-family: Noto Sans TC;
+}
+
+*,
+*:after,
+*::before {
+    box-sizing: inherit;
+}
+
+/* header */
+.header {
+    max-width: 1440px;
+    width: 1440px;
+    height: 90px;
+    margin: 0 auto auto auto;
+    display: flex;
+    background-color: #c6ac8f;
+}
+
+.logo {
+    width: 116px;
+    height: 85px;
+}
+
+/* header左邊 */
+.header-left {
+    width: 116px;
+    height: 85px;
+    margin-left: 74px;
+}
+
+/* header右邊導覽列 */
+.nav {
+    width: 400px;
+    height: 90px;
+    margin: 0 59px 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    width: 400px;
+    display: flex;
+    /* list並排 */
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list-item {
+    list-style: none;
+    /* li的圓圈符號移除 */
+    line-height: 32px;
+}
+
+.nav-list-photoitem {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    margin-right: 0;
+    list-style: none;
+    /* li的圓圈符號移除 */
+}
+
+.nav-list-item-link {
+    font-size: 0.44em;
+    font-weight: bold;
+    color: #073b4c;
+    display: block;
+    /* 用成可以換行、調整大小、有box屬性 */
+    text-decoration: none;
+}
+
+.nav-list-item-link:hover{
+    color:#ffffff;
+}
+
+/* 網頁內容 */
+.container {
+    max-width: 1440px;
+    /*設定最大寬度*/
+    /* height: 100vh; */
+    margin: auto;
+    /* 水平置中指令 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 內容區(固定footer在最底下) */
+.content-area {
+    display: flex;
+    flex:1;
+    margin: 80px 50px;
+    flex-direction: column;
+    align-items: center;  
+}
+
+.title {
+    width: 503px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.signIn-title {
+    width: 162px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signIn-title p {
+    font-size: 0.67em;
+    font-weight: bold;
+    color: #8E6E53;
+    text-align: center;
+    line-height: 30px;
+    align-self: center;
+    width: 162px;
+}
+
+.signIn-title hr {
+    color: #8E6E53;
+    align-self: center;
+    width: 162px;
+    margin-top: 15px;
+}
+
+.newAccount-title p {
+    font-size: 0.67em;
+    font-weight: lighter;
+    color: #433E3F;
+    text-align: center;
+    line-height: 30px;
+    align-self: center;
+    width: 162px;
+}
+
+.newAccount-title hr {
+    color: #8E6E53;
+    align-self: center;
+    width: 162px;
+    margin-top: 15px;
+    visibility: hidden;
+}
+
+/* Sign In Content */
+.signInContent, .newAccountContent {
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 30px; 
+    margin-bottom: 100px;
+}
+
+.inputArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#email, #password, #name, #phone {
+    border:1px #CECDCD solid;
+    width: 503px;
+    height: 48px;
+    color: #606060;
+    font-size: 0.44em;
+    padding-left: 8px;
+    margin-top: 20px;
+}
+
+#login, #register {
+    width: 136px;
+    height: 46px;
+    text-align: center;
+    background-color: #c6ac8f;
+    color:#ffffff;
+    font-size: 0.56em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 50px 0;
+}
+
+#login:hover {
+    background-color: #B19A7F;
+}
+
+#login:active {
+    transform: scale(1);
+    box-shadow: inset 0 0 10px 1px #99856E;
+}
+
+#register:hover {
+    background-color: #B19A7F;
+}
+
+#register:active {
+    transform: scale(1);
+    box-shadow: inset 0 0 10px 1px #99856E;
+}
+
+.bottomArea {
+    display: flex;
+    justify-content: space-between;
+    width: 503px;
+}
+
+.icon {
+    display: flex;
+    justify-content: space-between;
+    width: 80px; 
+}
+
+.icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.icon img:hover {
+    cursor: pointer;
+}
+
+.forgottenPassword{
+    display: flex;
+    align-items: center;
+}
+
+.forgottenPassword a {
+    text-decoration: none;
+    font-size: 0.44em;
+    color: #8E6E53;
+}
+
+.forgottenPassword a:hover {
+    text-decoration: none;
+    font-size: 0.44em;
+    color: #B19A7F;
+}
+
+.newAccountContent {
+    display: none;
+}
+
+
+/* 圖片大小 */
+.header-photo-1 {
+    width: 182px;
+    height: 132px;
+}
+
+
+/* footer */
+.footer {
+    width: 1440px;
+    height: 155px;
+    margin: auto auto 0 auto;
+    background-color: #c6ac8f;
+    border: 0.1px solid #c6ac8f;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;  
+}
+
+.footer-icon {
+    display: flex;
+    /* margin: 40px auto 0 auto; */
+    justify-content: space-between;
+    width: 134px; 
+    /* height: 30px;  */
+}
+
+.footer-content {
+    width: 398px;
+    height: 64px;
+    /* margin: 18px auto 52px auto; */
+    margin-top: 18px;
+    font-size: 0.44em;
+    font-weight: bold;
+    color: #073b4c;
+    text-align: center;
+    line-height: 32px;
+}
