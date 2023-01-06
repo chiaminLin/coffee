@@ -151,20 +151,70 @@ html {
     margin-bottom: 35px;
 }
 
+
+/* bottom-area */
 .bottom-area {
     display: flex;
     justify-content: space-between;
 }
 
-#quantity {
-    border: solid 1px #8E6E53;
-    color: #8E6E53;;
-    font-size: 0.44em;
-    width: 136px;
-    height: 46px;
-    padding-left: 10px;
+.quantity {
+    display: flex;
 }
 
+.quantity_subtract, .quantity_plus {
+    width: 43px;
+    height: 46px;
+    color:black;
+    border-color: #CECDCD;
+    font-size: 0.44em;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.quantity_subtract {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-color: #CECDCD;
+    border: 1px solid #CECDCD;
+}
+
+.quantity_plus {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-color: #CECDCD;
+    border: 1px solid #CECDCD;
+}
+
+.quantity_number {
+    border: 1px #CECDCD solid;
+    width: 100px;
+    height: 46px;
+    font-size: 0.44em;
+    color:black;
+    text-align: center;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+.quantity_subtract:hover {
+    background-color: #E1E1E1;
+}
+
+.quantity_subtract:active {
+    transform: scale(1);
+    box-shadow: inset 0 0 10px 1px #E1E1E1;
+}
+
+.quantity_plus:hover {
+    background-color: #E1E1E1;
+}
+
+.quantity_plus:active {
+    transform: scale(1);
+    box-shadow: inset 0 0 10px 1px #E1E1E1;
+}
 
 #addCart{
     width: 136px;
