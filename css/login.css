@@ -170,7 +170,7 @@ html {
     align-items: center;
 }
 
-#email, #password, #name, #phone {
+#loginEmail, #loginPassword, #registerName, #registerEmail, #registerPhone, #registerPassword {
     border:1px #CECDCD solid;
     width: 503px;
     height: 48px;

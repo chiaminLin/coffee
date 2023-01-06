@@ -12,6 +12,14 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+        <!-- Firebase App is always required and must be first -->
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+
+        <!-- Add additional services you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-storage-compat.js"></script>
+
     </head>
     <body>
         <div class="container">
@@ -65,8 +73,8 @@
                 <!-- sign in content -->
                 <div class="signInContent">
                     <div class="inputArea">
-                        <input type="text" id="email" placeholder="Email / Phone">
-                        <input type="password" id="password" placeholder="Password">
+                        <input type="text" id="loginEmail" placeholder="Email (user@mail.com)">
+                        <input type="password" id="loginPassword" placeholder="Password (at least 7 characters)">
                     </div>
 
                     <button type="button" id="login">登入</button>
@@ -87,10 +95,10 @@
                 <!-- new account content -->
                 <div class="newAccountContent">
                     <div class="inputArea">
-                        <input type="text" id="name" placeholder="Name">
-                        <input type="text" id="email" placeholder="Email">
-                        <input type="text" id="phone" placeholder="Phone">
-                        <input type="password" id="password" placeholder="Password">
+                        <input type="text" id="registerName" placeholder="Name (allen)">
+                        <input type="text" id="registerEmail" placeholder="Email (user@mail.com)">
+                        <input type="text" id="registerPhone" placeholder="Phone (0912345678)">
+                        <input type="password" id="registerPassword" placeholder="Password (at least 7 characters)">
                     </div>
 
                     <button type="button" id="register">註冊</button>
@@ -99,10 +107,6 @@
 
             </div>
 
-
-
-    
-    
             <footer class="footer">
                 <div class="footer-icon">
                     <a href=""><img src="../img/index_icon-fb.png" alt="none"></a>
@@ -120,7 +124,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--載入jQuery UI 1.11.4-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
             // New Account(註冊)被按下時
@@ -143,9 +147,60 @@
                 $('.newAccountContent').css('display', 'none');
             })
 
+            // Initialize Firebase
+            firebase.initializeApp({
+                apiKey: "AIzaSyAAFfrfiEidD0a4vKJ5K56UTBNVdbb3DXQ",
+                authDomain: "thesweeter-d7d76.firebaseapp.com",
+                projectId: "thesweeter-d7d76",
+                storageBucket: "thesweeter-d7d76.appspot.com",
+                messagingSenderId: "812564379233",
+                appId: "1:812564379233:web:069de507fc328bb3b91c20"
+            });
+            // Reference Firebase Auth
+            const auth = firebase.auth();
+
+              // REGISTER DOM ELEMENTS
+            const $loginEmail = $('#loginEmail');
+            const $loginPassword = $('#loginPassword');
+            const $registerName = $('#registerName');
+            const $registerEmail = $('#registerEmail');
+            const $registerPhone = $('#registerPhone');
+            const $registerPassword = $('#registerPassword');
+            const $btnlogIn = $('#login');
+            const $btnRegister = $('#register');
+            // const $btnSignOut = $('#btnSignOut');
+
+            // Login
+            $btnlogIn.click( function(e) {
+                auth.signInWithEmailAndPassword($loginEmail.val(), $loginPassword.val())
+                .catch(function(e){
+                    alert(e.message);
+                });
+            });
+
+            // Register
+            $btnRegister.click(function(e){
+                auth.createUserWithEmailAndPassword($registerEmail.val(), $registerPassword.val())
+                .catch(function(e){
+                    alert(e.message);
+                });
+            });
+
+            // Listening Login User
+            auth.onAuthStateChanged(function(user){
+                if(user) {
+                    alert("登入成功");
+                    console.log(user);
+                } else {
+                    console.log("not logged in");
+                }
+            });
 
         })
 
     </script>
+
+
+
     </body>
 </html>
