@@ -41,7 +41,7 @@
                         <img src="../img/cart.svg" alt="">
                     </li>
                     <li class="nav-list-photoitem">
-                        <img src="../img/login.svg" alt="">
+                        <a href="./login.html" class="nav-list-item-link"><img src="../img/login.svg" alt=""></a>
                     </li>
                 </ul>
             </nav>
@@ -53,8 +53,9 @@
             <div class="content-photo"><img src="../img/strawberry.jpg" alt="none" class="content-photo-1"></div>
             <div class="content-product">
 
+                <span class="content-product-info">人氣商品 > 莓果塔<br></span>
                 <span class="content-product-title">莓果塔<br></span>
-                <span class="content-product-ENtitle">Berries Tart<br></span>
+                <!-- <span class="content-product-ENtitle">Berries Tart<br></span> -->
                 <span class="content-product-text">
                     <p>
                         草莓與藍莓的結合搭配酥脆塔皮與鬆軟卡士達內餡，<br>
@@ -63,6 +64,18 @@
                 </span>
 
                 <span class="content-product-price">$800</span>
+
+                <div class="bottom-area">
+                    <select id="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <button type="button" id="addCart">加入購物車</button>
+                </div>
             </div>
             
             <div class="content-description">
