@@ -47,7 +47,7 @@
                             <img src="../img/cart.svg" alt="">
                         </li>
                         <li class="nav-list-photoitem">
-                            <a href="./login.html" class="nav-list-item-link"><img src="../img/login.svg" alt=""></a>
+                            <a class="loginLink" href="./login.html" class="nav-list-item-link"><img src="../img/login.svg" alt=""></a>
                         </li>
                     </ul>
                 </nav>
@@ -97,7 +97,6 @@
                     <div class="inputArea">
                         <input type="text" id="registerName" placeholder="Name (allen)">
                         <input type="text" id="registerEmail" placeholder="Email (user@mail.com)">
-                        <input type="text" id="registerPhone" placeholder="Phone (0912345678)">
                         <input type="password" id="registerPassword" placeholder="Password (at least 7 characters)">
                     </div>
 
@@ -164,7 +163,6 @@
             const $loginPassword = $('#loginPassword');
             const $registerName = $('#registerName');
             const $registerEmail = $('#registerEmail');
-            const $registerPhone = $('#registerPhone');
             const $registerPassword = $('#registerPassword');
             const $btnlogIn = $('#login');
             const $btnRegister = $('#register');
@@ -173,6 +171,10 @@
             // Login
             $btnlogIn.click( function(e) {
                 auth.signInWithEmailAndPassword($loginEmail.val(), $loginPassword.val())
+                .then(function (e) {
+                    // $btnSignIn.html(`Sign In`);
+                    window.location.href = "./profile.html";
+                })
                 .catch(function(e){
                     alert(e.message);
                 });
@@ -181,6 +183,19 @@
             // Register
             $btnRegister.click(function(e){
                 auth.createUserWithEmailAndPassword($registerEmail.val(), $registerPassword.val())
+                .then(function () {
+                    const user = auth.currentUser;
+                    user.updateProfile({
+                        displayName: $registerName.val()
+                    })
+                    .then(function () {
+                        // $btnSignUp.html(`Sign Up`);
+                        $registerEmail.val('');
+                        $registerPassword.val('');
+                        $registerName.val('');
+                        window.location.href = "./profile.html";
+                    });
+                })
                 .catch(function(e){
                     alert(e.message);
                 });
@@ -189,7 +204,6 @@
             // Listening Login User
             auth.onAuthStateChanged(function(user){
                 if(user) {
-                    alert("登入成功");
                     console.log(user);
                 } else {
                     console.log("not logged in");

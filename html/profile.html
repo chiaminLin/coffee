@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Sweeter</title>
+        <link rel="icon" href="../img/logo.jpg">
+        <link rel="stylesheet" href="../css/profile.css">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <!-- 字形 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+        <!-- Firebase App is always required and must be first -->
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+
+        <!-- Add additional services you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-storage-compat.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+    
+            <header class="header">
+    
+    
+                <div class="header-left">
+                    <a href="../index.html"><img class="logo" src="../img/logo.jpg" alt="none" class="header-photo-1"></a>
+                </div>
+    
+    
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-list-item">
+                            <a href="./product.html" class="nav-list-item-link">商品介紹</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./customizedProduction.html" class="nav-list-item-link">客製化商品</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="" class="nav-list-item-link">顧客回饋</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <img src="../img/cart.svg" alt="">
+                        </li>
+                        <li class="nav-list-photoitem">
+                            <a class="loginLink" -href="./login.html" class="nav-list-item-link"><img src="../img/login.svg" alt=""></a>
+                        </li>
+                    </ul>
+                </nav>
+    
+    
+            </header>
+    
+            <!-- content-area -->
+            <div class="content-area">
+
+                <div class="title">
+                    <p>會員資訊</p>
+                    <hr> 
+                </div>
+
+                <div class="eachInfo">
+                    <label for="name" class="labelItem">顧客姓名</label>
+                    <input type="text" id="name"> 
+                </div>
+
+                <div class="eachInfo">
+                    <label for="email" class="labelItem">電子郵件</label>
+                    <input type="text" id="email" readonly="readonly"> 
+                </div>
+
+                <button type="button" id="update">修改資訊</button>
+                <button type="button" id="logout">登出</button>
+
+            </div>
+
+            <footer class="footer">
+                <div class="footer-icon">
+                    <a href=""><img src="../img/index_icon-fb.png" alt="none"></a>
+                    <a href=""><img src="../img/index_icon-ig.png" alt="none"></a>
+                </div>
+                <div class="footer-content">聯絡我們：thesweeter.service@gmail.com<br>Copyright &copy; The Sweeter - Cofe & Dessert. 202209.
+                </div>
+            </footer>
+    
+        </div>
+    
+    <!-- script -->
+
+    <!--載入jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--載入jQuery UI 1.11.4-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            
+            // Initialize Firebase
+            firebase.initializeApp({
+                apiKey: "AIzaSyAAFfrfiEidD0a4vKJ5K56UTBNVdbb3DXQ",
+                authDomain: "thesweeter-d7d76.firebaseapp.com",
+                projectId: "thesweeter-d7d76",
+                storageBucket: "thesweeter-d7d76.appspot.com",
+                messagingSenderId: "812564379233",
+                appId: "1:812564379233:web:069de507fc328bb3b91c20"
+            });
+            // Reference Firebase Auth
+            const auth = firebase.auth();
+
+            // STORE PROFILE INFO
+            let profile_Name
+
+            // REGISTER DOM ELEMENTS
+            const $name = $('#name');
+            const $email = $('#email');
+            const $btnUpdate = $('#update');
+            const $btnLogOut = $('#logout');
+
+
+            // Listening Login User
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    console.log(user);
+                    user.providerData.forEach(function (profile) {
+                        console.log(`  Sign-in provider: ${profile.providerId}`);
+                        console.log(`  Provider-specific UID: ${profile.uid}`);
+                        console.log(`  Name: ${profile.displayName}`);
+                        console.log(`  Email: ${profile.email}`);
+                        profile_Name = profile.displayName;
+                        $name.val(profile.displayName);
+                        $email.val(profile.email);
+                    });
+                } else {
+                    console.log("not logged in");
+                }
+            });
+
+            // Update
+            $btnUpdate.click(function() {
+                const user = auth.currentUser;
+                user.updateProfile({
+                    displayName: $name.val()
+                })
+                .then(function () {
+                    console.log(user);
+                    user.providerData.forEach(function (profile) {
+                        console.log(`  Sign-in provider: ${profile.providerId}`);
+                        console.log(`  Provider-specific UID: ${profile.uid}`);
+                        console.log(`  Name: ${profile.displayName}`);
+                        console.log(`  Email: ${profile.email}`);
+                        profile_Name = profile.displayName;
+                        $name.val(profile.displayName);
+                        $email.val(profile.email);
+                    });
+                });
+
+            })
+
+            // Logout
+            $btnLogOut.click(function(){
+                auth.signOut()
+                .then(function() {
+                    window.location.href = "./login.html";
+                })
+                $name.val('');
+                $email.val('');     
+            });
+
+        })
+
+    </script>
+
+
+
+    </body>
+</html>
