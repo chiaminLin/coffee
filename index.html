@@ -55,7 +55,7 @@
                         <a href="" class="nav-list-item-link">顧客回饋</a>
                     </li>
                     <li class="nav-list-item">
-                        <img src="./img/cart.svg" alt="">
+                        <a class="cartLink" href="./html/cart.html"><img src="./img/cart.svg" alt=""></a>
                     </li>
                     <li class="nav-list-photoitem">
                         <a class="loginLink" href="./html/login.html" class="nav-list-item-link"><img
@@ -73,7 +73,7 @@
             <div class="top">
                 <div class="top-title"> 人氣商品</div>
                 <div class="top-content row">
-                    <div class="top-content-photo  col-sm-12 col-xl-4"><a href="./html/product.html"><img src="./img/strawberry.jpg"
+                    <div class="top-content-photo  col-sm-12 col-xl-4"><a id="berriesTart" href="./html/product.html"><img src="./img/strawberry.jpg"
                                 alt="none" class="content-photo-1"></a></div>
                     <div class="top-content-photo  col-sm-12 col-xl-4"><a href=""><img src="./img/cheese cake.jpeg" alt="none"
                                 class="content-photo-1"></a></div>
@@ -135,6 +135,31 @@
 
     <script>
         $(document).ready(function () {
+
+            // 人氣商品說明浮現
+            $('#berriesTart').mouseenter(function () {
+                if (!$(this).children("div").length) {
+                    $(this).append('<div class="overlay"></div>');
+                }
+
+                // Get the overlay div
+                var overlay = $(this).children('.overlay');
+
+                // Add html to overlay
+                overlay.html('<p>莓果塔</p>' + '<p>$ 800</p>');
+
+                // Fade in overlay
+                overlay.fadeIn(200);
+            })
+
+            // Mouseleave Overlay Effect
+            $('#berriesTart').mouseleave(function () {
+                // Get the overlay div
+                var overlay = $(this).children('.overlay');
+
+                // Fade out overlay
+                overlay.fadeOut(100);
+            });
 
             // Initialize Firebase
             firebase.initializeApp({

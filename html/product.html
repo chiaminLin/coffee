@@ -46,7 +46,7 @@
                         <a href="" class="nav-list-item-link">顧客回饋</a>
                     </li>
                     <li class="nav-list-item">
-                        <img src="../img/cart.svg" alt="">
+                        <a class="cartLink" href="./cart.html"><img src="../img/cart.svg" alt=""></a>
                     </li>
                     <li class="nav-list-photoitem">
                         <a class="loginLink" href="./login.html" class="nav-list-item-link"><img src="../img/login.svg"
@@ -160,16 +160,44 @@
             // Reference Firebase Auth
             const auth = firebase.auth();
 
+            //購物車連結         
+            let db = firebase.firestore();
+            let cartRef = db.collection("cart");
+            let memberEmail;
+
             // Listening Login User
             firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {
                     console.log(user);
+                    user.providerData.forEach(function (profile) {
+                        memberEmail = profile.email;
+                    }); 
                     $('.loginLink').attr("href", "./profile.html")
                 } else {
                     console.log("not logged in");
                     $('.loginLink').attr("href", "./login.html")
                 }
             });
+
+            $("#addCart").click(function() {
+                if(!memberEmail) {
+                    alert("請先登入即可使用購物車");
+                    window.location.href = "./login.html";
+                }
+                let docRef = cartRef.doc("allen@gmail.com");
+
+                // 傳至後台
+                docRef.set({
+                    "price": $('.content-product-price').html().toString().substr(1),
+                    "product": "蘋果塔",
+                    "quantity": $('.quantity_number').val()
+                })
+                .then(function () {
+                    // 導頁至購物車頁面
+                    window.location.href = "./cart.html";
+                })
+            
+            })
 
         })
 
