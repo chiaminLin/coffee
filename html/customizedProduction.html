@@ -14,6 +14,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
 
@@ -49,75 +54,83 @@
                         <img src="../img/cart.svg" alt="">
                     </li>
                     <li class="nav-list-photoitem">
-                        <a class="loginLink" href="./login.html" class="nav-list-item-link"><img src="../img/login.svg" alt=""></a>
+                        <a class="loginLink" href="./login.html" class="nav-list-item-link"><img src="../img/login.svg"
+                                alt=""></a>
                     </li>
                 </ul>
             </nav>
 
-            
+
         </header>
 
         <!-- content-area -->
         <div class="content-area">
-            <div class="top-area">
-                <div class="top-text">
+            <div class="top-area row">
+                <div class="top-text col-md-12 col-xl-6">
                     <p>滿足您的各種喜好，</p>
                     <p>開始創作您的專屬飲料！</p>
                 </div>
-                <div class="top-photo">
-                    <img src="../img/DIY_coffee.webp" alt="">
+                <div class="top-photo col-md-12 col-xl-6">
+                    <picture>
+                        <!-- <source srcset="../img/DIY_coffee.png" media="(min-width:1200px)">
+                        <source srcset="../img/DIY_coffee-middle.png" media="(min-width: 920px)">
+                        <source srcset="../img/DIY_coffee-small.png" media="(min-width: 0px)"> -->
+                        <img src="../img/DIY_coffee.png" alt="">
+                    </picture>
                 </div>
             </div>
-                       
+
             <hr>
 
             <div class="each-area">
-                <div class="milk-title">
-                    <p>Step1 : 請選擇奶類</p>
-                </div>
-
-                <div class="milk-icon">
-                    <div class="milk-almond-area">
-                        <label for="milk-almond" class="milk-almond">
-                            <div class="icon-bg">
-                                <img src="../img/DIY_almond.png" alt="植物杏仁奶">
-                            </div>
-                            <div class="icon-text"> 
-                                <p>植物杏仁奶</p>
-                            </div>
-                        </label>
+                <div class="row">
+                    <div class="milk-title col-md-12 col-xl-12">
+                        <p>Step1 : 請選擇奶類</p>
                     </div>
 
-                    <div class="milk-almond-area">
-                        <label for="milk-oat" class="milk-oat">
-                            <div class="icon-bg" >
-                                <img src="../img/DIY_oat.png" alt="植物燕麥奶">
-                            </div>
-                            <div class="icon-text"> 
-                                <p>植物燕麥奶</p>
-                            </div>
-                        </label>
-                    </div>
+                    <div class="milk-icon col-md-12 col-xl-12">
+                        <div class="milk-almond-area">
+                            <label for="milk-almond" class="milk-almond">
+                                <div class="icon-bg">
+                                    <img src="../img/DIY_almond.png" alt="植物杏仁奶">
+                                </div>
+                                <div class="icon-text">
+                                    <p>植物杏仁奶</p>
+                                </div>
+                            </label>
+                        </div>
 
-                    <div class="milk-original-area">
-                        <label for="milk-original" class="milk-original">
-                            <div class="icon-bg">
-                                <img src="../img/DIY_milk.png" alt="純鮮奶">
-                            </div>
-                            <div class="icon-text"> 
-                                <p>純鮮奶</p>
-                            </div>
-                        </label>
+                        <div class="milk-almond-area">
+                            <label for="milk-oat" class="milk-oat">
+                                <div class="icon-bg">
+                                    <img src="../img/DIY_oat.png" alt="植物燕麥奶">
+                                </div>
+                                <div class="icon-text">
+                                    <p>植物燕麥奶</p>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="milk-original-area">
+                            <label for="milk-original" class="milk-original">
+                                <div class="icon-bg">
+                                    <img src="../img/DIY_milk.png" alt="純鮮奶">
+                                </div>
+                                <div class="icon-text">
+                                    <p>純鮮奶</p>
+                                </div>
+                            </label>
+                        </div>
+
                     </div>
-                    
                 </div>
             </div>
 
             <!-- milk-area radio 控制 -->
             <div class="all-radio">
                 <input type="radio" id="milk-almond" name="milk" value="杏仁奶">
-                <input type="radio" id="milk-oat" name="milk" value="燕麥奶">
-                <input type="radio" id="milk-original" name="milk" value="">
+                  <input type="radio" id="milk-oat" name="milk" value="燕麥奶">
+                  <input type="radio" id="milk-original" name="milk" value="">
             </div>
 
             <hr>
@@ -133,7 +146,7 @@
                             <div class="icon-bg">
                                 <img src="../img/DIY_coffee-beans.png" alt="濃縮咖啡">
                             </div>
-                            <div class="icon-text"> 
+                            <div class="icon-text">
                                 <p class="text">濃縮咖啡</p>
                             </div>
                         </label>
@@ -144,7 +157,7 @@
                             <div class="icon-bg">
                                 <img src="../img/DIY_special-beans.png" alt="季節限定特選濃縮">
                             </div>
-                            <div class="icon-text"> 
+                            <div class="icon-text">
                                 <p>季節限定特選濃縮</p>
                             </div>
                         </label>
@@ -155,7 +168,7 @@
             <!-- coffee-area radio 控制 -->
             <div class="all-radio">
                 <input type="radio" id="coffee-origin" name="coffee" value="">
-                <input type="radio" id="coffee-special" name="coffee" value="當季特調">
+                  <input type="radio" id="coffee-special" name="coffee" value="當季特調">
             </div>
 
             <hr>
@@ -167,11 +180,11 @@
 
                 <div class="sauce-icon">
                     <div class="sauce-area">
-                        <label for="sauce-origin" class="sauce-origin" >
+                        <label for="sauce-origin" class="sauce-origin">
                             <div class="icon-bg">
                                 <img src="../img/DIY_chocolate.png" alt="可可糖漿">
                             </div>
-                            <div class="icon-text"> 
+                            <div class="icon-text">
                                 <p>可可糖漿</p>
                             </div>
                         </label>
@@ -182,7 +195,7 @@
                             <div class="icon-bg">
                                 <img src="../img/DIY_caramel.png" alt="焦糖糖漿">
                             </div>
-                            <div class="icon-text"> 
+                            <div class="icon-text">
                                 <p>焦糖糖漿</p>
                             </div>
                         </label>
@@ -197,7 +210,7 @@
             <!-- sauce-area radio 控制 -->
             <div class="all-radio">
                 <input type="radio" id="sauce-origin" name="sauce" value="可可">
-                <input type="radio" id="sauce-special" name="sauce" value="焦糖">
+                  <input type="radio" id="sauce-special" name="sauce" value="焦糖">
             </div>
 
             <hr>
@@ -227,7 +240,7 @@
 
         </div>
 
-        
+
 
 
         <footer class="footer">
@@ -235,7 +248,8 @@
                 <a href=""><img src="../img/index_icon-fb.png" alt="none"></a>
                 <a href=""><img src="../img/index_icon-ig.png" alt="none"></a>
             </div>
-            <div class="footer-content">聯絡我們：thesweeter.service@gmail.com<br>Copyright &copy; The Sweeter - Cofe & Dessert. 202209.
+            <div class="footer-content">聯絡我們：thesweeter.service@gmail.com<br>Copyright &copy; The Sweeter - Cofe &
+                Dessert. 202209.
             </div>
         </footer>
 
@@ -249,7 +263,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             var milkContent;
             var milkLableName;
             var coffeeContent;
@@ -258,48 +272,48 @@
             var sauceLableName;
 
             $("input[type='radio'][name='milk']").change(function () {
-                if(milkLableName) {
+                if (milkLableName) {
                     $(milkLableName).children(".icon-bg").css("background-color", "#073b4c");
                 }
-                milkLableName = "." +  $(this).attr('id');
+                milkLableName = "." + $(this).attr('id');
                 $(milkLableName).children(".icon-bg").css("background-color", "#c6ac8f");
 
                 milkContent = $(milkLableName).children(".icon-text").children("p").html();
             });
 
             $("input[type='radio'][name='coffee']").change(function () {
-                if(coffeeLableName) {
+                if (coffeeLableName) {
                     $(coffeeLableName).children(".icon-bg").css("background-color", "#073b4c");
                 }
-                coffeeLableName = "." +  $(this).attr('id');
+                coffeeLableName = "." + $(this).attr('id');
                 $(coffeeLableName).children(".icon-bg").css("background-color", "#c6ac8f");
 
                 coffeeContent = $(coffeeLableName).children(".icon-text").children("p").html();
             });
 
             $("input[type='radio'][name='sauce']").change(function () {
-                if(sauceLableName) {
+                if (sauceLableName) {
                     $(sauceLableName).children(".icon-bg").css("background-color", "#073b4c");
                 }
-                sauceLableName = "." +  $(this).attr('id');
+                sauceLableName = "." + $(this).attr('id');
                 $(sauceLableName).children(".icon-bg").css("background-color", "#c6ac8f");
 
                 sauceContent = $(sauceLableName).children(".icon-text").children("p").html();
             });
 
-            $('#doDiy').click(function() {
+            $('#doDiy').click(function () {
                 var milk = $("input[type='radio'][name='milk']:checked").val();
                 var coffee = $("input[type='radio'][name='coffee']:checked").val();
                 var sauce = $("input[type='radio'][name='sauce']:checked").val();
-                
-                if($("input[type='radio'][name='milk']:checked").lenghth != 0 &&  $("input[type='radio'][name='coffee']:checked").lenghth != 0 && $("input[type='radio'][name='sauce']:checked").lenghth != 0) {
+
+                if ($("input[type='radio'][name='milk']:checked").lenghth != 0 && $("input[type='radio'][name='coffee']:checked").lenghth != 0 && $("input[type='radio'][name='sauce']:checked").lenghth != 0) {
                     var result = sauce + milk + coffee + "拿鐵";
                     $('#result-name').html(result);
 
                     var resultContent = '（' + milkContent + '＋' + coffeeContent + '＋' + sauceContent + '）';
                     $('#result-content').html(resultContent);
                 }
-                
+
             })
 
             // Initialize Firebase

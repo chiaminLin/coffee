@@ -49,7 +49,8 @@
                         <img src="../img/cart.svg" alt="">
                     </li>
                     <li class="nav-list-photoitem">
-                        <a class="loginLink" href="./login.html" class="nav-list-item-link"><img src="../img/login.svg" alt=""></a>
+                        <a class="loginLink" href="./login.html" class="nav-list-item-link"><img src="../img/login.svg"
+                                alt=""></a>
                     </li>
                 </ul>
             </nav>
@@ -57,32 +58,34 @@
 
         </header>
 
-        <div class="content-area">
-            <div class="content-photo"><img src="../img/strawberry.jpg" alt="none" class="content-photo-1"></div>
-            <div class="content-product">
+        <div class="content-area row">
+            <div class="content">
+                <div class="content-photo  col-md-12 col-lg-4"><img src="../img/strawberry.jpg" alt="none"
+                        class="content-photo-1"></div>
+                <div class="content-product  col-md-12 col-lg-4">
 
-                <span class="content-product-info">人氣商品 > 莓果塔<br></span>
-                <span class="content-product-title">莓果塔<br></span>
-                <!-- <span class="content-product-ENtitle">Berries Tart<br></span> -->
-                <span class="content-product-text">
-                    <p>
-                        草莓與藍莓的結合搭配酥脆塔皮與鬆軟卡士達內餡，<br>
-                        酸甜不斷地在舌尖交錯融合，滋味豐富！<br>
-                    </p>
-                </span>
+                    <span class="content-product-info">人氣商品 > 莓果塔<br></span>
+                    <span class="content-product-title">莓果塔<br></span>
+                    <!-- <span class="content-product-ENtitle">Berries Tart<br></span> -->
+                    <span class="content-product-text">
+                        <p>
+                            草莓與藍莓的結合搭配酥脆塔皮與鬆軟卡士達內餡，<br>
+                            酸甜不斷地在舌尖交錯融合，滋味豐富！<br>
+                        </p>
+                    </span>
 
-                <span class="content-product-price">$800</span>
+                    <span class="content-product-price">$800</span>
 
-                <div class="bottom-area">
-                    <div class="quantity">
-                        <input class="quantity_subtract" type="button" value="—">
-                        <input class="quantity_number" type="text" value="1">
-                        <input class="quantity_plus" type="button" value="＋">
+                    <div class="bottom-area">
+                        <div class="quantity">
+                            <input class="quantity_subtract" type="button" value="—">
+                            <input class="quantity_number" type="text" value="1">
+                            <input class="quantity_plus" type="button" value="＋">
+                        </div>
+                        <button type="button" id="addCart">加入購物車</button>
                     </div>
-                    <button type="button" id="addCart">加入購物車</button>
                 </div>
             </div>
-            
             <div class="content-description">
                 <div class="contnent-decoration"></div>
                 <p>
@@ -110,13 +113,14 @@
                 <a href=""><img src="../img/index_icon-fb.png" alt="none"></a>
                 <a href=""><img src="../img/index_icon-ig.png" alt="none"></a>
             </div>
-            <div class="footer-content">聯絡我們：thesweeter.service@gmail.com<br>Copyright &copy; The Sweeter - Cofe & Dessert. 202209.
+            <div class="footer-content">聯絡我們：thesweeter.service@gmail.com<br>Copyright &copy; The Sweeter - Cofe &
+                Dessert. 202209.
             </div>
         </footer>
 
     </div>
 
-        <!-- script -->
+    <!-- script -->
 
     <!--載入jQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -125,21 +129,21 @@
 
     <script>
 
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             //數量減少
-            $(".quantity_subtract").click(function() {
+            $(".quantity_subtract").click(function () {
                 var inputNum = $(".quantity_number").val();
-                if(inputNum > 1) {
+                if (inputNum > 1) {
                     $(".quantity_number").val(--inputNum);
                 }
-                if(inputNum <= 1) {
+                if (inputNum <= 1) {
                     $(".quantity_number").val("1");
                 }
             })
 
             //數量增加
-            $(".quantity_plus").click(function() {
+            $(".quantity_plus").click(function () {
                 var inputNum = $(".quantity_number").val();
                 $(".quantity_number").val(++inputNum);
             })
@@ -168,7 +172,7 @@
             });
 
         })
-    
+
     </script>
 
 </body>
