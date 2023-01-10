@@ -60,6 +60,9 @@ html{
     line-height: 32px;
     margin-right: 0;
     list-style: none;  /* li的圓圈符號移除 */ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-list-item-link{

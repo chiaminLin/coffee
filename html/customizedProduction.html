@@ -51,7 +51,7 @@
                         <a href="" class="nav-list-item-link">顧客回饋</a>
                     </li>
                     <li class="nav-list-item">
-                        <img src="../img/cart.svg" alt="">
+                        <a class="cartLink" href="./cart.html"><img src="../img/cart.svg" alt=""></a> 
                     </li>
                     <li class="nav-list-photoitem">
                         <a class="loginLink" href="./login.html" class="nav-list-item-link"><img src="../img/login.svg"
@@ -82,7 +82,7 @@
 
             <hr>
 
-            <div class="each-area">
+            <div class="each-area" id="first">
                 <div class="row">
                     <div class="milk-title col-md-12 col-xl-12">
                         <p>Step1 : 請選擇奶類</p>
@@ -130,12 +130,12 @@
             <div class="all-radio">
                 <input type="radio" id="milk-almond" name="milk" value="杏仁奶">
                   <input type="radio" id="milk-oat" name="milk" value="燕麥奶">
-                  <input type="radio" id="milk-original" name="milk" value="">
+                  <input type="radio" id="milk-original" name="milk" value="0">
             </div>
 
             <hr>
 
-            <div class="each-area">
+            <div class="each-area" id="second">
                 <div class="coffee-title">
                     <p>Step2 : 請選擇濃縮</p>
                 </div>
@@ -167,13 +167,13 @@
 
             <!-- coffee-area radio 控制 -->
             <div class="all-radio">
-                <input type="radio" id="coffee-origin" name="coffee" value="">
+                <input type="radio" id="coffee-origin" name="coffee" value="0">
                   <input type="radio" id="coffee-special" name="coffee" value="當季特調">
             </div>
 
             <hr>
 
-            <div class="each-area">
+            <div class="each-area" id="third">
                 <div class="sauce-title">
                     <p>Step3 : 請選擇糖漿</p>
                 </div>
@@ -215,7 +215,7 @@
 
             <hr>
 
-            <div class="each-area">
+            <div class="each-area" id="resultArea">
                 <div class="result-title">
                     <p>您的專屬商品為</p>
                 </div>
@@ -279,6 +279,9 @@
                 $(milkLableName).children(".icon-bg").css("background-color", "#c6ac8f");
 
                 milkContent = $(milkLableName).children(".icon-text").children("p").html();
+
+                //頁面跳轉至step2
+                $('html,body').animate({ scrollTop: $("#second").offset().top - 100 }, 200); 
             });
 
             $("input[type='radio'][name='coffee']").change(function () {
@@ -289,6 +292,9 @@
                 $(coffeeLableName).children(".icon-bg").css("background-color", "#c6ac8f");
 
                 coffeeContent = $(coffeeLableName).children(".icon-text").children("p").html();
+
+                //頁面跳轉至step3
+                $('html,body').animate({ scrollTop: $("#third").offset().top - 100 }, 200);
             });
 
             $("input[type='radio'][name='sauce']").change(function () {
@@ -306,13 +312,45 @@
                 var coffee = $("input[type='radio'][name='coffee']:checked").val();
                 var sauce = $("input[type='radio'][name='sauce']:checked").val();
 
+                if(!milk) {
+                    alert("請選擇奶類");
+                    //頁面跳轉至奶類
+                    $('html,body').animate({ scrollTop: $("#first").offset().top - 100 }, 200);
+                    return;
+                }
+
+                if(!coffee) {
+                    alert("請選擇濃縮");
+                    //頁面跳轉至濃縮
+                    $('html,body').animate({ scrollTop: $("#second").offset().top - 100 }, 200);
+                    return;
+                }
+
+                if(!sauce) {
+                    alert("請選擇糖漿");
+                    //頁面跳轉至糖漿
+                    $('html,body').animate({ scrollTop: $("#third").offset().top - 100 }, 200);
+                    return;
+                }
+
                 if ($("input[type='radio'][name='milk']:checked").lenghth != 0 && $("input[type='radio'][name='coffee']:checked").lenghth != 0 && $("input[type='radio'][name='sauce']:checked").lenghth != 0) {
+                    if(milk == 0) {
+                        milk = "";
+                    }
+
+                    if(coffee == 0) {
+                        coffee = "";
+                    }
+                    
                     var result = sauce + milk + coffee + "拿鐵";
                     $('#result-name').html(result);
 
                     var resultContent = '（' + milkContent + '＋' + coffeeContent + '＋' + sauceContent + '）';
                     $('#result-content').html(resultContent);
                 }
+
+                //頁面跳轉至特調結果
+                $('html,body').animate({ scrollTop: $("#resultArea").offset().top - 100 }, 200);
 
             })
 

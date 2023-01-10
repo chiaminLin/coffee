@@ -17,8 +17,8 @@ html {
 
 /* header */
 .header {
-    max-width: 100%;
-    width:100%;
+    max-width: 1440px;
+    width: 1440px;
     height: 90px;
     margin: 0 auto auto auto;
     display: flex;
@@ -87,6 +87,11 @@ html {
     color:#ffffff;
 }
 
+.header-photo-1 {
+    width: 182px;
+    height: 132px;
+}
+
 /* 網頁內容 */
 .container {
     max-width: 1440px;
@@ -101,64 +106,60 @@ html {
 /* 內容區(固定footer在最底下) */
 .content-area {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* flex:1; */
+    flex:1;
+    margin: 80px 200px;
+    flex-direction: column;
+    align-items: center;  
 }
 
-.content-photo {
-    width: 421px;
-    height: 325px;
-    margin-right: 60px;
-    margin-top: 120px;
-}
-
-.content-product {
-    width: 421px;
-    height: 325px;
-    margin-left: 60px;
-    margin-top: 120px;
-}
-
-.content-product-info {
-    display: block;
-    font-size: 0.44em;
-    color: #606060;
-}
-
-.content-product-title{
-    display: block;
-    font-size: 1em;
+.title p {
+    font-size: 0.67em;
     font-weight: bold;
-    color: #073b4c;
-    margin-top: 20px;
-}
-.content-product-ENtitle{
-    display: block;
-    font-size: 1em;
-    font-weight: bold;
-    color: #c6ac8f;
-    margin-top: 18px;
-}
-.content-product-text{
-    display: block;
-    font-size: 0.44em;
-    margin-top: 54px;
-    height: 70px;
-}
-.content-product-price{
-    display: block;
-    font-size: 1em;
-    font-weight: bold;
-    color: #073b4c;
-    margin-bottom: 35px;
+    color: #073B4C;
+    text-align: center;
+    line-height: 30px;
+    align-self: center;
 }
 
+.fa-arrow-left {
+    color:#8E6E53;
+}
 
-/* bottom-area */
-.bottom-area {
+.shoppingMore {
+    font-weight: bold;
+    font-size: 16px;
+    color:#8E6E53;
+    text-decoration: none;
+    align-self: flex-start;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* product */
+.product {
     display: flex;
-    justify-content: space-between;
+    justify-content:left;
+    width: 100%;
+    padding: 50px 50px;
+    align-items: center;
+}
+
+.product img {
+    width: 222px;
+    height: 171px;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.productInfo p {
+    font-size: 0.67em;
+    color: #8E6E53;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .quantity {
@@ -169,7 +170,7 @@ html {
     width: 43px;
     height: 46px;
     color:black;
-    border-color: #CECDCD;
+    border-color: #8E6E53;
     font-size: 0.44em;
     text-align: center;
     cursor: pointer;
@@ -179,47 +180,123 @@ html {
 .quantity_subtract {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    border-color: #CECDCD;
-    border: 1px solid #CECDCD;
+    border-color: #8E6E53;
+    border: 1px solid #8E6E53;
 }
 
 .quantity_plus {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    border-color: #CECDCD;
-    border: 1px solid #CECDCD;
+    border-color: #8E6E53;
+    border: 1px solid #8E6E53;
 }
 
 .quantity_number {
-    border: 1px #CECDCD solid;
-    width: 100px;
+    border: 1px #8E6E53 solid;
+    width: 70px;
     height: 46px;
     font-size: 0.44em;
-    color:black;
+    color:#8E6E53;
     text-align: center;
     border-left: transparent;
     border-right: transparent;
 }
 
 .quantity_subtract:hover {
-    background-color: #E1E1E1;
+    background-color: #EAE0D5;
 }
 
 .quantity_subtract:active {
     transform: scale(1);
-    box-shadow: inset 0 0 10px 1px #E1E1E1;
+    box-shadow: inset 0 0 10px 1px #EAE0D5;
 }
 
 .quantity_plus:hover {
-    background-color: #E1E1E1;
+    background-color: #EAE0D5;
 }
 
 .quantity_plus:active {
     transform: scale(1);
-    box-shadow: inset 0 0 10px 1px #E1E1E1;
+    box-shadow: inset 0 0 10px 1px #EAE0D5;
 }
 
-#addCart{
+.eachHr {
+    width: 1051px;
+    color: 8E6E53;
+}
+
+/* shipping */
+.shipping {
+    display: flex;
+    margin: 50px 0;
+}
+
+.shipping label {
+    font-size: 0.44em;
+    color: #8E6E53;
+    margin-right: 150px;
+    align-self: center;
+    font-weight: bold;
+}
+
+#method {
+    border: 1px solid #8E6E53;
+    color: #8E6E53;
+    width: 145px;
+    height: 35px;
+    font-size: 0.44em;
+    padding: 3px 3px;
+}
+
+.totalMoney {
+    align-self: flex-end;
+    margin-bottom: 80px;
+}
+
+.totalMoney p {
+    font-size: 0.67em;
+    font-weight: bold;
+    color: #8E6E53;
+    display: inline;
+    margin-right: 20px;
+    margin-left: 80px;
+}
+
+.memberTitle {
+    margin: 50px;
+}
+
+/* memberInfo */
+.memberInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.eachInfo {
+    display: flex;
+    margin-top: 40px;
+}
+
+.labelItem {
+    font-size: 0.44em;
+    font-weight: bold;
+    color: #8E6E53;
+    text-align: center;
+    align-self: center;
+    margin-right: 50px;
+}
+
+#name, #email, #phone {
+    display: inline;
+    border:1px #8E6E53 solid;
+    width: 300px;
+    height: 30px;
+    color: #8E6E53;
+    font-size: 0.44em;
+    padding-left: 8px;
+}
+
+#submitOrder {
     width: 136px;
     height: 46px;
     text-align: center;
@@ -229,64 +306,21 @@ html {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    display: inline;
+    margin: 100px;
 }
 
-#addCart:hover {
+#submitOrder:hover {
     background-color: #B19A7F;
 }
 
-#addCart:active {
+#submitOrder:active {
     transform: scale(1);
     box-shadow: inset 0 0 10px 1px #99856E;
 }
 
-.contnent-decoration{
-    width: 8px;
-    height: 32px;
-    margin-right: 20px;
-    margin-top: 10px;
-    background-color: #c6ac8f;
-}
-.content-description{
-    width: 732px ;
-    height: 410px;
-    display: flex;
-    margin: 0px 25 0 auto;
-    padding-top: 61px;
-}
-.content-description-title{
-    font-size: 0.67em;
-    font-weight: bold;
-    color: #073b4c;
-    
-}
-.content-description-text{
-    font-size: 0.44em;
-}
-.line{
-    width: 1039px;
-    height: 0;
-    border: 1px solid #CDCBCB;
-    margin: 83px auto 131px 311px;
-}
-
-
-/* 圖片大小 */
-.header-photo-1 {
-    width: 182px;
-    height: 132px;
-
-}
-
-.content-photo-1 {
-    width: 421px;
-    height: 325px;
-}
-
 /* footer */
 .footer {
-    width: 100%;
+    width: 1440px;
     height: 155px;
     margin: auto auto 0 auto;
     background-color: #c6ac8f;
@@ -316,3 +350,4 @@ html {
     text-align: center;
     line-height: 32px;
 }
+

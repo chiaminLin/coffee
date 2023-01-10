@@ -60,6 +60,9 @@ html{
     line-height: 32px;
     margin-right: 0;
     list-style: none;  /* li的圓圈符號移除 */ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-list-item-link{
@@ -115,10 +118,42 @@ html{
     justify-content: CENTER;
 }
 
+.top-content a {
+    position: relative;
+	display: block;
+}
+
 .top-content-photo{
     width: 365px;
     height: 283px;
     margin-right: 40px;
+    display: block;
+}
+
+/* 人氣商品浮現 */
+.overlay {
+	display: none;
+	background: rgba(0, 0, 0, .40);
+	color: #EAE0D5;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+	padding: 10px;
+	box-sizing: border-box;
+	pointer-events: none;
+	font-weight: 100;
+    /* width: 365px; */
+    width: 100%;
+    height: 125px;
+    /* padding: 8% 15%; */
+    text-align: center;
+    padding: 7%;
+}
+
+.overlay p {
+    font-size: 0.67em;
+    margin-bottom: 10px;
 }
 
 /* 中間內容 */

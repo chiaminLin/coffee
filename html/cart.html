@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Sweeter</title>
+        <link rel="icon" href="../img/logo.jpg">
+        <link rel="stylesheet" href="../css/cart.css">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <!-- 字形 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/1a52dd44d7.js" crossorigin="anonymous"></script>
+        <!-- Firebase App is always required and must be first -->
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+
+        <!-- Add additional services you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-storage-compat.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+    
+            <header class="header">
+    
+    
+                <div class="header-left">
+                    <a href="../index.html"><img class="logo" src="../img/logo.jpg" alt="none" class="header-photo-1"></a>
+                </div>
+    
+    
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-list-item">
+                            <a href="./product.html" class="nav-list-item-link">商品介紹</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="./customizedProduction.html" class="nav-list-item-link">客製化商品</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="" class="nav-list-item-link">顧客回饋</a>
+                        </li>
+                        <li class="nav-list-photoitem">
+                            <a class="cartLink" href="./cart.html"><img src="../img/cart.svg" alt=""></a>
+                        </li>
+                        <li class="nav-list-photoitem">
+                            <a class="loginLink" href="./login.html" class="nav-list-item-link"><img src="../img/login.svg" alt=""></a>
+                        </li>
+                    </ul>
+                </nav>
+    
+    
+            </header>
+    
+            <!-- content-area -->
+            <div class="content-area">
+
+                <div class="title">
+                    <p>確認您的訂單</p>
+                </div>
+
+                <a class="shoppingMore" href="../index.html"><i class="fa-sharp fa-solid fa-arrow-left"></i>&emsp;繼續購物</a>
+                <hr class="eachHr">
+
+                <div class="product">
+                    <img src="../img/index_strawberry.jpg" alt="">
+                    <div class="productInfo">
+                        <p id="productName"></p>
+                        <p>$ <span id="price"></span></p>
+                        <div class="quantity">
+                            <input class="quantity_subtract" type="button" value="—">
+                            <input class="quantity_number" type="text" value="1">
+                            <input class="quantity_plus" type="button" value="＋">
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="eachHr">
+
+                <div class="shipping">
+                    <label for="method">取貨方式</label>
+                    <select name="" id="method">
+                        <option value="">店面取貨</option>
+                    </select>
+                </div>
+
+                <hr class="eachHr">
+
+                <div class="totalMoney">
+                    <p>總計</p>
+                    <p id="totalPrice"></p>
+                </div>
+
+                <div class="title memberTitle">
+                    <p>訂購人資訊</p>
+                </div>
+
+                <hr class="eachHr">
+
+                <div class="memberInfo">
+                    <div class="eachInfo">
+                        <label for="name" class="labelItem">顧客姓名</label>
+                        <input type="text" id="name"> 
+                    </div>
+    
+                    <div class="eachInfo">
+                        <label for="email" class="labelItem">電子郵件</label>
+                        <input type="text" id="email" readonly="readonly"> 
+                    </div>
+
+                    <div class="eachInfo">
+                        <label for="phone" class="labelItem">聯絡電話</label>
+                        <input type="text" id="phone" placeholder="Phone(Ex.0912345678)"> 
+                    </div>
+                </div>
+
+                <button type="button" id="submitOrder">完成訂購</button>
+
+            </div>
+
+            <footer class="footer">
+                <div class="footer-icon">
+                    <a href=""><img src="../img/index_icon-fb.png" alt="none"></a>
+                    <a href=""><img src="../img/index_icon-ig.png" alt="none"></a>
+                </div>
+                <div class="footer-content">聯絡我們：thesweeter.service@gmail.com<br>Copyright &copy; The Sweeter - Cofe & Dessert. 202209.
+                </div>
+            </footer>
+    
+        </div>
+    
+    <!-- script -->
+
+    <!--載入jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--載入jQuery UI 1.11.4-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            //數量減少
+            $(".quantity_subtract").click(function() {
+                var inputNum = $(".quantity_number").val();
+                if(inputNum > 1) {
+                    $(".quantity_number").val(--inputNum);
+                }
+                if(inputNum <= 1) {
+                    $(".quantity_number").val("1");
+                }
+            })
+
+            //數量增加
+            $(".quantity_plus").click(function() {
+                var inputNum = $(".quantity_number").val();
+                $(".quantity_number").val(++inputNum);
+            })            
+            
+            // Initialize Firebase
+            firebase.initializeApp({
+                apiKey: "AIzaSyAAFfrfiEidD0a4vKJ5K56UTBNVdbb3DXQ",
+                authDomain: "thesweeter-d7d76.firebaseapp.com",
+                projectId: "thesweeter-d7d76",
+                storageBucket: "thesweeter-d7d76.appspot.com",
+                messagingSenderId: "812564379233",
+                appId: "1:812564379233:web:069de507fc328bb3b91c20"
+            });
+            // Reference Firebase Auth
+            const auth = firebase.auth();
+
+            // The Sweeter(購物車連結)          
+            let db = firebase.firestore();
+            let cartRef = db.collection("cart");
+            let memberEmail;
+
+            // Listening Login User
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    console.log(user);
+                    $('.loginLink').attr("href", "./profile.html");
+                    user.providerData.forEach(function (profile) {
+                        $("#name").val(profile.displayName);
+                        $("#email").val(profile.email);
+                        memberEmail = profile.email;
+                        showCartDetail(memberEmail);
+                    });
+                } else {
+                    alert("請先登入！");
+                    $('.loginLink').attr("href", "./login.html");
+                    window.location.href = "../html/login.html";
+                }
+            });
+
+            let price;
+            let number;
+            let docRef;
+
+            function showCartDetail(memberEmail) {
+                // 監聽
+                docRef = cartRef.doc(memberEmail);
+                docRef.onSnapshot(
+                    function(doc){
+                        console.log(doc.data());
+                        $('#productName').html(doc.data().product);
+                        $('#price').html(doc.data().price);
+                        $('.quantity_number').val(doc.data().quantity);
+                        price = parseInt(doc.data().price);
+                        number = $('.quantity_number').val();
+                        $('#totalPrice').html(price*number);
+                    }
+                );
+            }
+
+            $('.quantity_number').change(function() {
+                $('#totalPrice').html(price*$('.quantity_number').val());
+                updateCart(memberEmail);
+            })
+
+            $(".quantity_subtract").click(function() {
+                $('#totalPrice').html(price*$('.quantity_number').val());
+                updateCart(memberEmail);
+            })
+
+            $(".quantity_plus").click(function() {
+                $('#totalPrice').html(price*$('.quantity_number').val());
+                updateCart(memberEmail);
+            })
+
+            function updateCart(memberEmail) {
+                docRef.set({
+                    "price": price,
+                    "product": "蘋果塔",
+                    "quantity": $('.quantity_number').val()
+                })
+            }
+
+        });
+
+    </script>
+
+
+
+    </body>
+</html>

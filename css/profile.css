@@ -69,6 +69,9 @@ html {
     margin-right: 0;
     list-style: none;
     /* li的圓圈符號移除 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-list-item-link {
@@ -154,9 +157,13 @@ html {
     border:1px #CECDCD solid;
     width: 300px;
     height: 30px;
-    color: #606060;
+    color: #8E6E53;
     font-size: 0.44em;
     padding-left: 8px;
+}
+
+#email {
+    color: #B1B1B1;
 }
 
 #update{
