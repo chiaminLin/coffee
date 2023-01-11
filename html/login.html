@@ -21,7 +21,7 @@
     <!-- 字形 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
 
@@ -165,6 +165,8 @@
                 $('#signInHr').css('visibility', 'hidden');
                 $('.signInContent').css('display', 'none');
                 $('.newAccountContent').css('display', 'flex');
+                $('#signInP').css('font-weight', 'normal');
+                $('#newAccountP').css('font-weight', 'bold');
             })
 
             // LogIn(登入)被按下時
@@ -175,6 +177,8 @@
                 $('#signInHr').css('visibility', 'visible');
                 $('.signInContent').css('display', 'flex');
                 $('.newAccountContent').css('display', 'none');
+                $('#signInP').css('font-weight', 'bold');
+                $('#newAccountP').css('font-weight', 'normal');
             })
 
             // Initialize Firebase
