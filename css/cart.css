@@ -8,17 +8,19 @@ html {
     font-size: 36px;
     font-family: Noto Sans TC;
 }
-
+body{
+    display: flex;
+    justify-content: center;
+}
 *,
 *:after,
 *::before {
     box-sizing: inherit;
 }
 
-/* header */
 .header {
     max-width: 1440px;
-    width: 1440px;
+    width: 100%;
     height: 90px;
     margin: 0 auto auto auto;
     display: flex;
@@ -93,26 +95,30 @@ html {
 }
 
 /* 網頁內容 */
-.container {
-    max-width: 1440px;
-    /*設定最大寬度*/
+.container{
+    max-width: 1440px;                                 /*設定最大寬度*/
+    width: 100%;
     /* height: 100vh; */
-    margin: auto;
-    /* 水平置中指令 */
+    margin:auto 0;                                      /* 水平置中指令 */
     display: flex;
+    padding: 0;
     flex-direction: column;
+    position: relative;
 }
 
 /* 內容區(固定footer在最底下) */
 .content-area {
     display: flex;
     flex:1;
-    margin: 80px 200px;
+    margin: 80px 0 0 0;
     flex-direction: column;
     align-items: center;  
 }
-
+.title{
+    margin-bottom: 80px;
+}
 .title p {
+    width: 145px;
     font-size: 0.67em;
     font-weight: bold;
     color: #073B4C;
@@ -126,11 +132,14 @@ html {
 }
 
 .shoppingMore {
+    position: absolute;
+    left: 15%;
+    top:14%;
     font-weight: bold;
     font-size: 16px;
     color:#8E6E53;
     text-decoration: none;
-    align-self: flex-start;
+    /* align-self: flex-start; */
     margin-top: 30px;
     margin-bottom: 10px;
 }
@@ -138,8 +147,8 @@ html {
 /* product */
 .product {
     display: flex;
-    justify-content:left;
-    width: 100%;
+    justify-content:center;
+    width: 390px;
     padding: 50px 50px;
     align-items: center;
 }
@@ -221,7 +230,7 @@ html {
 }
 
 .eachHr {
-    width: 1051px;
+    width: 80%;
     color: 8E6E53;
 }
 
@@ -230,7 +239,9 @@ html {
     display: flex;
     margin: 50px 0;
 }
-
+label{
+    width: 64px;
+}
 .shipping label {
     font-size: 0.44em;
     color: #8E6E53;
@@ -249,7 +260,10 @@ html {
 }
 
 .totalMoney {
-    align-self: flex-end;
+    position: absolute;
+    right: 10%;
+    bottom: 47%;
+    /* align-self: flex-end; */
     margin-bottom: 80px;
 }
 
@@ -259,11 +273,11 @@ html {
     color: #8E6E53;
     display: inline;
     margin-right: 20px;
-    margin-left: 80px;
+    /* margin-left: 80px; */
 }
 
 .memberTitle {
-    margin: 50px;
+    margin: 150px 50px 50px 50px;
 }
 
 /* memberInfo */
@@ -320,7 +334,8 @@ html {
 
 /* footer */
 .footer {
-    width: 1440px;
+    max-width: 1440px;
+    width: 100%;
     height: 155px;
     margin: auto auto 0 auto;
     background-color: #c6ac8f;
@@ -350,4 +365,51 @@ html {
     text-align: center;
     line-height: 32px;
 }
+
+@media screen and (min-width: 0px) {
+    .topnav {
+        display: block;
+    }
+
+    .header {
+        display: none;
+    }
+    #name,#email,#phone{
+        width: 200px;
+    }
+    .product img {
+        width: 180px;
+    }
+    .shipping label {
+        margin-right: 80px;
+    }
+}
+@media screen and (min-width: 500px) {
+    #name,#email,#phone{
+        width: 300px;
+    }
+
+}
+@media screen and (min-width: 550px) {
+    .product img {
+        width: 222px;
+    }
+    .shipping label {
+        margin-right: 150px;
+    }
+
+}
+@media screen and (min-width: 870px) {
+    .topnav {
+        display: none;
+    }
+
+    .header {
+        display: flex;
+    }
+
+}
+
+
+
 

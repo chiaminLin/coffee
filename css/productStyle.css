@@ -18,7 +18,7 @@ html {
 /* header */
 .header {
     max-width: 100%;
-    width:100%;
+    width: 100%;
     height: 90px;
     margin: 0 auto auto auto;
     display: flex;
@@ -83,8 +83,8 @@ html {
     text-decoration: none;
 }
 
-.nav-list-item-link:hover{
-    color:#ffffff;
+.nav-list-item-link:hover {
+    color: #ffffff;
 }
 
 /* 網頁內容 */
@@ -96,6 +96,7 @@ html {
     /* 水平置中指令 */
     display: flex;
     flex-direction: column;
+    padding: 0;
 }
 
 /* 內容區(固定footer在最底下) */
@@ -107,6 +108,8 @@ html {
 }
 
 .content-photo {
+    display: flex;
+    justify-content: center;
     width: 421px;
     height: 325px;
     margin-right: 60px;
@@ -126,27 +129,30 @@ html {
     color: #606060;
 }
 
-.content-product-title{
+.content-product-title {
     display: block;
     font-size: 1em;
     font-weight: bold;
     color: #073b4c;
     margin-top: 20px;
 }
-.content-product-ENtitle{
+
+.content-product-ENtitle {
     display: block;
     font-size: 1em;
     font-weight: bold;
     color: #c6ac8f;
     margin-top: 18px;
 }
-.content-product-text{
+
+.content-product-text {
     display: block;
     font-size: 0.44em;
     margin-top: 54px;
     height: 70px;
 }
-.content-product-price{
+
+.content-product-price {
     display: block;
     font-size: 1em;
     font-weight: bold;
@@ -165,10 +171,11 @@ html {
     display: flex;
 }
 
-.quantity_subtract, .quantity_plus {
+.quantity_subtract,
+.quantity_plus {
     width: 43px;
     height: 46px;
-    color:black;
+    color: black;
     border-color: #CECDCD;
     font-size: 0.44em;
     text-align: center;
@@ -195,7 +202,7 @@ html {
     width: 100px;
     height: 46px;
     font-size: 0.44em;
-    color:black;
+    color: black;
     text-align: center;
     border-left: transparent;
     border-right: transparent;
@@ -219,12 +226,12 @@ html {
     box-shadow: inset 0 0 10px 1px #E1E1E1;
 }
 
-#addCart{
+#addCart {
     width: 136px;
     height: 46px;
     text-align: center;
     background-color: #c6ac8f;
-    color:#ffffff;
+    color: #ffffff;
     font-size: 0.56em;
     border: none;
     border-radius: 10px;
@@ -241,34 +248,38 @@ html {
     box-shadow: inset 0 0 10px 1px #99856E;
 }
 
-.contnent-decoration{
+.contnent-decoration {
     width: 8px;
     height: 32px;
     margin-right: 20px;
     margin-top: 10px;
     background-color: #c6ac8f;
 }
-.content-description{
-    width: 732px ;
-    height: 410px;
+
+.content-description {
+    width: 732px;
+    /* height: 410px; */
     display: flex;
     margin: 0px 25 0 auto;
     padding-top: 61px;
 }
-.content-description-title{
+
+.content-description-title {
     font-size: 0.67em;
     font-weight: bold;
     color: #073b4c;
-    
+
 }
-.content-description-text{
+
+.content-description-text {
     font-size: 0.44em;
 }
-.line{
+
+.line {
     width: 1039px;
     height: 0;
     border: 1px solid #CDCBCB;
-    margin: 83px auto 131px 311px;
+    margin: 83px auto 131px auto;
 }
 
 
@@ -293,15 +304,15 @@ html {
     border: 0.1px solid #c6ac8f;
     display: flex;
     justify-content: center;
-    align-items: center; 
-    flex-direction: column;  
+    align-items: center;
+    flex-direction: column;
 }
 
 .footer-icon {
     display: flex;
     /* margin: 40px auto 0 auto; */
     justify-content: space-between;
-    width: 134px; 
+    width: 134px;
     /* height: 30px;  */
 }
 
@@ -315,4 +326,71 @@ html {
     color: #073b4c;
     text-align: center;
     line-height: 32px;
+}
+
+@media screen and (min-width: 0px) {
+    .topnav {
+        display: block;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .content-photo-1 {
+        width: 320px;
+        height: 247px;
+    }
+
+    .content-product {
+        margin-top: 0;
+        margin-left: 20px;
+    }
+
+    .content-photo {
+        margin-right: 0px;
+    }
+
+}
+
+@media screen and (min-width: 450px) {
+    .content-photo-1 {
+        width: 421px;
+        height: 325px;
+    }
+
+    .content-product {
+
+
+        margin-top: 30px;
+        margin-left: 20px;
+
+    }
+
+}
+
+@media screen and (min-width: 870px) {
+    .topnav {
+        display: none;
+    }
+
+    .header {
+        display: flex;
+    }
+
+}
+
+@media screen and (min-width: 870px) {
+    .content-photo {
+        margin-right: 60px;
+    }
+
+
+}
+@media screen and (min-width: 920px) {
+    .content-product {
+        margin-top: 120px;
+    }
+
+
 }

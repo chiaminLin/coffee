@@ -8,10 +8,16 @@
     <title>The Sweeter</title>
     <link rel="icon" href="../img/logo.jpg"> <!-- 視窗icon -->
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- 漢堡 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- bookstrap
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 
     <link rel="stylesheet" href="./css/indexStyle.css">
     <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/選單.css">
     <!-- 字形 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +25,7 @@
 
 
 
-    
+
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
 
@@ -28,13 +34,30 @@
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-storage-compat.js"></script>
 
-    
+
 </head>
 
 <body>
 
     <div class="container">
-       
+        <div class="topnav">
+            <div class="header-left">
+                <a href="index.html" style="padding: 0px;"><img class="logo" src="./img/logo.jpg" alt="none" class="header-photo-1"></a>
+            </div>
+            <!-- Navigation links (hidden by default) -->
+            <div id="myLinks" class="myLinks">
+                <a href="./html/product.html" class="nav-list-item-link">商品介紹</a>
+                <a href="./html/customizedProduction.html" class="nav-list-item-link">客製化商品</a>
+                <a href="" class="nav-list-item-link">顧客回饋</a>
+                <a class="cartLink" href="./html/cart.html"><img src="./img/cart.svg" alt=""></a>
+                <a class="loginLink" href="./html/login.html" class="nav-list-item-link"><img src="./img/login.svg"
+                        alt=""></a>
+            </div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
         <header class="header">
 
 
@@ -72,22 +95,22 @@
 
             <div class="top">
                 <div class="top-title"> 人氣商品</div>
-                <div class="top-content row">
-                    <div class="top-content-photo  col-sm-12 col-xl-4"><a id="berriesTart" href="./html/product.html"><img src="./img/strawberry.jpg"
-                                alt="none" class="content-photo-1"></a></div>
-                    <div class="top-content-photo  col-sm-12 col-xl-4"><a href=""><img src="./img/cheese cake.jpeg" alt="none"
+                <div class="top-content">
+                    <div class="top-content-photo"><a id="berriesTart" href="./html/product.html"><img
+                                src="./img/strawberry.jpg" alt="none" class="content-photo-1"></a></div>
+                    <div class="top-content-photo"><a id="cheeseCake" href=""><img src="./img/cheese cake.jpeg" alt="none"
                                 class="content-photo-1"></a></div>
-                    <div class="top-content-photo  col-sm-12 col-xl-4"><a href=""><img src="./img/tiramisu.jpeg" alt="none"
+                    <div class="top-content-photo right"><a id="tiramisu" href=""><img src="./img/tiramisu.jpeg" alt="none"
                                 class="content-photo-1"></a></div>
                 </div>
             </div>
 
 
-            <div class="middle row">
-                <div class="middle-photo  col-sm-12 col-xl-6"><a href="./html/customizedProduction.html"><img src="./img/index_coffee.jpeg"
+            <div class="middle">
+                <div class="middle-photo"><a href="./html/customizedProduction.html"><img src="./img/index_coffee.jpeg"
                             alt="none" class="content-photo-2"></a></div>
-                <div class="middle-content  col-sm-12 col-xl-6">
-                    <div class="middle-content-title">創造屬於您的專屬商品，<br>滿足您的所有喜好</div>
+                <div class="middle-content">
+                    <div class="middle-content-title">創造屬於您的專屬商品<br>滿足您的所有喜好</div>
                     <div class="line"></div>
                     <div class="middle-content-text">每項配料皆由你親自決定，<br>由我們為您製作出屬於您的完美特調</div>
                     <div class="middle-content-button"><a href="./html/customizedProduction.html"
@@ -96,14 +119,14 @@
             </div>
 
 
-            <div class="bottom row ">
-                <div class="bottom-content  col-sm-12 col-xl-6">
-                    <div class="bottom-content-title">辦公室下午茶團購首選，<br>滿兩千即享免運優惠</div>
+            <div class="bottom">
+                <div class="bottom-content">
+                    <div class="bottom-content-title">辦公室下午茶團購首選<br>滿兩千即享免運優惠</div>
                     <div class="line"></div>
                     <div class="bottom-content-text">全館任品項只要消費總金額滿兩千，<br>即可享有免運優惠！</div>
                     <div class="bottom-content-button"><a href="" class="bottom-content-button-link">最新優惠</a></div>
                 </div>
-                <div class="bottom-photo col-md-12 col-xl-6"><a href=""><img src="./img/index_sale.webp" alt="none"
+                <div class="bottom-photo"><a href=""><img src="./img/index_sale.webp" alt="none"
                             class="content-photo-2"></a></div>
             </div>
 
@@ -130,13 +153,13 @@
     <!--載入jQuery UI 1.11.4-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-   
+
 
 
     <script>
         $(document).ready(function () {
 
-            // 人氣商品說明浮現
+            // 人氣商品說明浮現(莓果塔)
             $('#berriesTart').mouseenter(function () {
                 if (!$(this).children("div").length) {
                     $(this).append('<div class="overlay"></div>');
@@ -154,6 +177,56 @@
 
             // Mouseleave Overlay Effect
             $('#berriesTart').mouseleave(function () {
+                // Get the overlay div
+                var overlay = $(this).children('.overlay');
+
+                // Fade out overlay
+                overlay.fadeOut(100);
+            });
+
+            // 人氣商品說明浮現(乳酪蛋糕)
+            $('#cheeseCake').mouseenter(function () {
+                if (!$(this).children("div").length) {
+                    $(this).append('<div class="overlay"></div>');
+                }
+
+                // Get the overlay div
+                var overlay = $(this).children('.overlay');
+
+                // Add html to overlay
+                overlay.html('<p>乳酪蛋糕</p>' + '<p>$ 800</p>');
+
+                // Fade in overlay
+                overlay.fadeIn(200);
+            })
+
+            // Mouseleave Overlay Effect
+            $('#cheeseCake').mouseleave(function () {
+                // Get the overlay div
+                var overlay = $(this).children('.overlay');
+
+                // Fade out overlay
+                overlay.fadeOut(100);
+            });
+
+            // 人氣商品說明浮現(提拉米蘇)
+            $('#tiramisu').mouseenter(function () {
+                if (!$(this).children("div").length) {
+                    $(this).append('<div class="overlay"></div>');
+                }
+
+                // Get the overlay div
+                var overlay = $(this).children('.overlay');
+
+                // Add html to overlay
+                overlay.html('<p>提拉米蘇</p>' + '<p>$ 800</p>');
+
+                // Fade in overlay
+                overlay.fadeIn(200);
+            })
+
+            // Mouseleave Overlay Effect
+            $('#tiramisu').mouseleave(function () {
                 // Get the overlay div
                 var overlay = $(this).children('.overlay');
 
@@ -184,7 +257,21 @@
                 }
             });
 
+
+           
         })
+
+
+        function myFunction() {
+                var x = document.getElementById("myLinks");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+
+            }
+
 
     </script>
 

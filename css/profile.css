@@ -18,7 +18,7 @@ html {
 /* header */
 .header {
     max-width: 1440px;
-    width: 1440px;
+    width:100%;
     height: 90px;
     margin: 0 auto auto auto;
     display: flex;
@@ -102,6 +102,7 @@ html {
     /* 水平置中指令 */
     display: flex;
     flex-direction: column;
+    padding: 0;
 }
 
 /* 內容區(固定footer在最底下) */
@@ -143,6 +144,7 @@ html {
 }
 
 .labelItem {
+    width: 64px;
     font-size: 0.44em;
     font-weight: bold;
     color: #8E6E53;
@@ -214,7 +216,7 @@ html {
 
 /* footer */
 .footer {
-    width: 1440px;
+    width: 100%;
     height: 155px;
     margin: auto auto 0 auto;
     background-color: #c6ac8f;
@@ -245,3 +247,25 @@ html {
     line-height: 32px;
 }
 
+@media screen and (min-width: 0px) {
+    .topnav {
+        display: block;
+    }
+
+    .header {
+        display: none;
+    }
+    
+}
+
+
+@media screen and (min-width: 870px) {
+    .topnav {
+        display: none;
+    }
+
+    .header {
+        display: flex;
+    }
+
+}
