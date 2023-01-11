@@ -1,138 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>The Sweeter</title>
-        <link rel="icon" href="../img/logo.jpg">
-        <link rel="stylesheet" href="../css/cart.css">
-        <link rel="stylesheet" href="../css/normalize.css">
-        <!-- 字形 -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/1a52dd44d7.js" crossorigin="anonymous"></script>
-        <!-- Firebase App is always required and must be first -->
-        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
 
-        <!-- Add additional services you want to use -->
-        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-storage-compat.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sweeter</title>
 
-    </head>
-    <body>
-        <div class="container">
-    
-            <header class="header">
-    
-    
-                <div class="header-left">
-                    <a href="../index.html"><img class="logo" src="../img/logo.jpg" alt="none" class="header-photo-1"></a>
-                </div>
-    
-    
-                <nav class="nav">
-                    <ul class="nav-list">
-                        <li class="nav-list-item">
-                            <a href="./product.html" class="nav-list-item-link">商品介紹</a>
-                        </li>
-                        <li class="nav-list-item">
-                            <a href="./customizedProduction.html" class="nav-list-item-link">客製化商品</a>
-                        </li>
-                        <li class="nav-list-item">
-                            <a href="" class="nav-list-item-link">顧客回饋</a>
-                        </li>
-                        <li class="nav-list-photoitem">
-                            <a class="cartLink" href="./cart.html"><img src="../img/cart.svg" alt=""></a>
-                        </li>
-                        <li class="nav-list-photoitem">
-                            <a class="loginLink" href="./login.html" class="nav-list-item-link"><img src="../img/login.svg" alt=""></a>
-                        </li>
-                    </ul>
-                </nav>
-    
-    
-            </header>
-    
-            <!-- content-area -->
-            <div class="content-area">
+    <!-- 漢堡 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-                <div class="title">
-                    <p>確認您的訂單</p>
-                </div>
+    <!-- bookstrap
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 
-                <a class="shoppingMore" href="../index.html"><i class="fa-sharp fa-solid fa-arrow-left"></i>&emsp;繼續購物</a>
-                <hr class="eachHr">
 
-                <div class="product">
-                    <img src="../img/index_strawberry.jpg" alt="">
-                    <div class="productInfo">
-                        <p id="productName"></p>
-                        <p>$ <span id="price"></span></p>
-                        <div class="quantity">
-                            <input class="quantity_subtract" type="button" value="—">
-                            <input class="quantity_number" type="text" value="1">
-                            <input class="quantity_plus" type="button" value="＋">
-                        </div>
-                    </div>
-                </div>
+    <link rel="icon" href="../img/logo.jpg">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/選單.css">
 
-                <hr class="eachHr">
 
-                <div class="shipping">
-                    <label for="method">取貨方式</label>
-                    <select name="" id="method">
-                        <option value="">店面取貨</option>
-                    </select>
-                </div>
 
-                <hr class="eachHr">
+    <!-- 字形 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1a52dd44d7.js" crossorigin="anonymous"></script>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
 
-                <div class="totalMoney">
-                    <p>總計</p>
-                    <p id="totalPrice"></p>
-                </div>
+    <!-- Add additional services you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-storage-compat.js"></script>
 
-                <div class="title memberTitle">
-                    <p>訂購人資訊</p>
-                </div>
+</head>
 
-                <hr class="eachHr">
+<body>
+    <div class="container">
+        <div class="topnav">
+            <div class="header-left">
+                <a href="/index.html" style="padding: 0px;"><img class="logo" src="../img/logo.jpg" alt="none"
+                        class="header-photo-1"></a>
+            </div>
+            <!-- Navigation links (hidden by default) -->
+            <div id="myLinks" class="myLinks">
+                <a href="../html/product.html" class="nav-list-item-link">商品介紹</a>
+                <a href="../html/customizedProduction.html" class="nav-list-item-link">客製化商品</a>
+                <a href="" class="nav-list-item-link">顧客回饋</a>
+                <a class="cartLink" href="../html/cart.html"><img src="../img/cart.svg" alt=""></a>
+                <a class="loginLink" href="../html/login.html" class="nav-list-item-link"><img src="../img/login.svg"
+                        alt=""></a>
+            </div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="hamburger()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <header class="header">
 
-                <div class="memberInfo">
-                    <div class="eachInfo">
-                        <label for="name" class="labelItem">顧客姓名</label>
-                        <input type="text" id="name"> 
-                    </div>
-    
-                    <div class="eachInfo">
-                        <label for="email" class="labelItem">電子郵件</label>
-                        <input type="text" id="email" readonly="readonly"> 
-                    </div>
 
-                    <div class="eachInfo">
-                        <label for="phone" class="labelItem">聯絡電話</label>
-                        <input type="text" id="phone" placeholder="Phone(Ex.0912345678)"> 
-                    </div>
-                </div>
-
-                <button type="button" id="submitOrder">完成訂購</button>
-
+            <div class="header-left">
+                <a href="../index.html"><img class="logo" src="../img/logo.jpg" alt="none" class="header-photo-1"></a>
             </div>
 
-            <footer class="footer">
-                <div class="footer-icon">
-                    <a href=""><img src="../img/index_icon-fb.png" alt="none"></a>
-                    <a href=""><img src="../img/index_icon-ig.png" alt="none"></a>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-list-item">
+                        <a href="./product.html" class="nav-list-item-link">商品介紹</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a href="./customizedProduction.html" class="nav-list-item-link">客製化商品</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a href="" class="nav-list-item-link">顧客回饋</a>
+                    </li>
+                    <li class="nav-list-photoitem">
+                        <a class="cartLink" href="./cart.html"><img src="../img/cart.svg" alt=""></a>
+                    </li>
+                    <li class="nav-list-photoitem">
+                        <a class="loginLink" href="./login.html" class="nav-list-item-link"><img src="../img/login.svg"
+                                alt=""></a>
+                    </li>
+                </ul>
+            </nav>
+
+
+        </header>
+
+        <!-- content-area -->
+        <div class="content-area">
+
+            <div class="title">
+                <p>確認您的訂單</p>
+            </div>
+
+            <a class="shoppingMore" href="../index.html"><i class="fa-sharp fa-solid fa-arrow-left"></i>&emsp;繼續購物</a>
+            <hr class="eachHr">
+
+            <div class="product">
+                <img src="../img/index_strawberry.jpg" alt="">
+                <div class="productInfo">
+                    <p id="productName"></p>
+                    <p>$ <span id="price"></span></p>
+                    <div class="quantity">
+                        <input class="quantity_subtract" type="button" value="—">
+                        <input class="quantity_number" type="text" value="1">
+                        <input class="quantity_plus" type="button" value="＋">
+                    </div>
                 </div>
-                <div class="footer-content">聯絡我們：thesweeter.service@gmail.com<br>Copyright &copy; The Sweeter - Cofe & Dessert. 202209.
+            </div>
+
+            <hr class="eachHr">
+
+            <div class="shipping">
+                <label for="method">取貨方式</label>
+                <select name="" id="method">
+                    <option value="">店面取貨</option>
+                </select>
+            </div>
+
+            <hr class="eachHr">
+
+            <div class="totalMoney">
+                <p>總計</p>
+                <p id="totalPrice">800</p>
+            </div>
+
+            <div class="title memberTitle">
+                <p>訂購人資訊</p>
+            </div>
+
+            <hr class="eachHr">
+
+            <div class="memberInfo">
+                <div class="eachInfo">
+                    <label for="name" class="labelItem">顧客姓名</label>
+                    <input type="text" id="name">
                 </div>
-            </footer>
-    
+
+                <div class="eachInfo">
+                    <label for="email" class="labelItem">電子郵件</label>
+                    <input type="text" id="email" readonly="readonly">
+                </div>
+
+                <div class="eachInfo">
+                    <label for="phone" class="labelItem">聯絡電話</label>
+                    <input type="text" id="phone" placeholder="Phone(Ex.0912345678)">
+                </div>
+            </div>
+
+            <button type="button" id="submitOrder">完成訂購</button>
+
         </div>
-    
+
+        <footer class="footer">
+            <div class="footer-icon">
+                <a href=""><img src="../img/index_icon-fb.png" alt="none"></a>
+                <a href=""><img src="../img/index_icon-ig.png" alt="none"></a>
+            </div>
+            <div class="footer-content">聯絡我們：thesweeter.service@gmail.com<br>Copyright &copy; The Sweeter - Cofe &
+                Dessert. 202209.
+            </div>
+        </footer>
+
+    </div>
+
     <!-- script -->
 
     <!--載入jQuery-->
@@ -141,25 +176,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             //數量減少
-            $(".quantity_subtract").click(function() {
+            $(".quantity_subtract").click(function () {
                 var inputNum = $(".quantity_number").val();
-                if(inputNum > 1) {
+                if (inputNum > 1) {
                     $(".quantity_number").val(--inputNum);
                 }
-                if(inputNum <= 1) {
+                if (inputNum <= 1) {
                     $(".quantity_number").val("1");
                 }
             })
 
             //數量增加
-            $(".quantity_plus").click(function() {
+            $(".quantity_plus").click(function () {
                 var inputNum = $(".quantity_number").val();
                 $(".quantity_number").val(++inputNum);
-            })            
-            
+            })
+
             // Initialize Firebase
             firebase.initializeApp({
                 apiKey: "AIzaSyAAFfrfiEidD0a4vKJ5K56UTBNVdbb3DXQ",
@@ -203,46 +238,83 @@
                 // 監聽
                 docRef = cartRef.doc(memberEmail);
                 docRef.onSnapshot(
-                    function(doc){
+                    function (doc) {
+                        if(!doc.data()) {
+                            alert("您尚未選購任何物品，請至首頁選購！");
+                            window.location.href = "../index.html";
+                        }
                         console.log(doc.data());
                         $('#productName').html(doc.data().product);
                         $('#price').html(doc.data().price);
                         $('.quantity_number').val(doc.data().quantity);
                         price = parseInt(doc.data().price);
                         number = $('.quantity_number').val();
-                        $('#totalPrice').html(price*number);
+                        $('#totalPrice').html(price * number);
                     }
                 );
             }
 
-            $('.quantity_number').change(function() {
-                $('#totalPrice').html(price*$('.quantity_number').val());
+            $('.quantity_number').change(function () {
+                $('#totalPrice').html(price * $('.quantity_number').val());
                 updateCart(memberEmail);
             })
 
-            $(".quantity_subtract").click(function() {
-                $('#totalPrice').html(price*$('.quantity_number').val());
+            $(".quantity_subtract").click(function () {
+                $('#totalPrice').html(price * $('.quantity_number').val());
                 updateCart(memberEmail);
             })
 
-            $(".quantity_plus").click(function() {
-                $('#totalPrice').html(price*$('.quantity_number').val());
+            $(".quantity_plus").click(function () {
+                $('#totalPrice').html(price * $('.quantity_number').val());
                 updateCart(memberEmail);
             })
 
+            // 更新cart資料庫
             function updateCart(memberEmail) {
                 docRef.set({
                     "price": price,
-                    "product": "蘋果塔",
+                    "product": $('#productName').html(),
                     "quantity": $('.quantity_number').val()
                 })
             }
 
-        });
+            let orderRef = db.collection("order");
+            $('#submitOrder').click(function() {
+                memberRef = orderRef.doc("orderDetail");
+                memberDoc = memberRef.collection(memberEmail);
+                memberDoc.add({
+                    "email": memberEmail,
+                    "name": "emily",
+                    "phone": $('#phone').val(),
+                    "price": price,
+                    "product": $('#productName').html(),
+                    "quantity": number,
+                    "totalPrice": price * number,
+                    "orderDate": new Date()
+                })
+                .then(function () {
+                    // 導頁至首頁
+                    alert("訂購成功！感謝您的購買")
+                    window.location.href = "../index.html";
+                })
+            })
 
+        });
+        function hamburger() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+                $(".shoppingMore").show();
+            } else {
+                x.style.display = "block";
+                $(".shoppingMore").hide();
+            }
+
+        }
     </script>
 
 
 
-    </body>
+</body>
+
 </html>

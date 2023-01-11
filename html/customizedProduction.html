@@ -7,16 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Sweeter</title>
     <link rel="icon" href="../img/logo.jpg">
+
+    <!-- 漢堡 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- bookstrap
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
     <link rel="stylesheet" href="../css/customizedProductionStyle.css">
     <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/選單.css">
     <!-- 字形 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 
 
     <!-- Firebase App is always required and must be first -->
@@ -30,7 +38,25 @@
 
 <body>
     <div class="container">
-
+        <div class="topnav">
+            <div class="header-left">
+                <a href="../index.html" style="padding: 0px;"><img class="logo" src="../img/logo.jpg" alt="none"
+                        class="header-photo-1"></a>
+            </div>
+            <!-- Navigation links (hidden by default) -->
+            <div id="myLinks" class="myLinks">
+                <a href="../html/product.html" class="nav-list-item-link">商品介紹</a>
+                <a href="../html/customizedProduction.html" class="nav-list-item-link">客製化商品</a>
+                <a href="" class="nav-list-item-link">顧客回饋</a>
+                <a class="cartLink" href="../html/cart.html"><img src="../img/cart.svg" alt=""></a>
+                <a class="loginLink" href="../html/login.html" class="nav-list-item-link"><img src="../img/login.svg"
+                        alt=""></a>
+            </div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="hamburger()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
         <header class="header">
 
 
@@ -51,7 +77,7 @@
                         <a href="" class="nav-list-item-link">顧客回饋</a>
                     </li>
                     <li class="nav-list-item">
-                        <a class="cartLink" href="./cart.html"><img src="../img/cart.svg" alt=""></a> 
+                        <a class="cartLink" href="./cart.html"><img src="../img/cart.svg" alt=""></a>
                     </li>
                     <li class="nav-list-photoitem">
                         <a class="loginLink" href="./login.html" class="nav-list-item-link"><img src="../img/login.svg"
@@ -65,16 +91,17 @@
 
         <!-- content-area -->
         <div class="content-area">
-            <div class="top-area row">
-                <div class="top-text col-md-12 col-xl-6">
-                    <p>滿足您的各種喜好，</p>
+            <div class="top-area">
+                <div class="top-text">
+                    <p>滿足您的各種喜好</p>
                     <p>開始創作您的專屬飲料！</p>
                 </div>
-                <div class="top-photo col-md-12 col-xl-6">
+                <div class="top-photo">
                     <picture>
-                        <!-- <source srcset="../img/DIY_coffee.png" media="(min-width:1200px)">
-                        <source srcset="../img/DIY_coffee-middle.png" media="(min-width: 920px)">
-                        <source srcset="../img/DIY_coffee-small.png" media="(min-width: 0px)"> -->
+                        <source srcset="../img/DIY_coffee.png" media="(min-width:1200px)">
+                        <!-- <source srcset="../img/DIY_coffee-middle.png" media="(min-width: 768px)"> -->
+                        <source srcset="../img/DIY_coffee-middle.png" media="(min-width: 500px)">
+                        <source srcset="../img/DIY_coffee-small.png" media="(min-width: 0px)">
                         <img src="../img/DIY_coffee.png" alt="">
                     </picture>
                 </div>
@@ -83,47 +110,47 @@
             <hr>
 
             <div class="each-area" id="first">
-                <div class="row">
-                    <div class="milk-title col-md-12 col-xl-12">
-                        <p>Step1 : 請選擇奶類</p>
-                    </div>
 
-                    <div class="milk-icon col-md-12 col-xl-12">
-                        <div class="milk-almond-area">
-                            <label for="milk-almond" class="milk-almond">
-                                <div class="icon-bg">
-                                    <img src="../img/DIY_almond.png" alt="植物杏仁奶">
-                                </div>
-                                <div class="icon-text">
-                                    <p>植物杏仁奶</p>
-                                </div>
-                            </label>
-                        </div>
-
-                        <div class="milk-almond-area">
-                            <label for="milk-oat" class="milk-oat">
-                                <div class="icon-bg">
-                                    <img src="../img/DIY_oat.png" alt="植物燕麥奶">
-                                </div>
-                                <div class="icon-text">
-                                    <p>植物燕麥奶</p>
-                                </div>
-                            </label>
-                        </div>
-
-                        <div class="milk-original-area">
-                            <label for="milk-original" class="milk-original">
-                                <div class="icon-bg">
-                                    <img src="../img/DIY_milk.png" alt="純鮮奶">
-                                </div>
-                                <div class="icon-text">
-                                    <p>純鮮奶</p>
-                                </div>
-                            </label>
-                        </div>
-
-                    </div>
+                <div class="milk-title">
+                    <p>Step1 : 請選擇奶類</p>
                 </div>
+
+                <div class="milk-icon">
+                    <div class="milk-almond-area">
+                        <label for="milk-almond" class="milk-almond">
+                            <div class="icon-bg">
+                                <img src="../img/DIY_almond.png" alt="植物杏仁奶">
+                            </div>
+                            <div class="icon-text">
+                                <p>植物杏仁奶</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="milk-almond-area right">
+                        <label for="milk-oat" class="milk-oat">
+                            <div class="icon-bg">
+                                <img src="../img/DIY_oat.png" alt="植物燕麥奶">
+                            </div>
+                            <div class="icon-text">
+                                <p>植物燕麥奶</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="milk-original-area">
+                        <label for="milk-original" class="milk-original">
+                            <div class="icon-bg">
+                                <img src="../img/DIY_milk.png" alt="純鮮奶">
+                            </div>
+                            <div class="icon-text">
+                                <p>純鮮奶</p>
+                            </div>
+                        </label>
+                    </div>
+
+                </div>
+
             </div>
 
             <!-- milk-area radio 控制 -->
@@ -281,7 +308,7 @@
                 milkContent = $(milkLableName).children(".icon-text").children("p").html();
 
                 //頁面跳轉至step2
-                $('html,body').animate({ scrollTop: $("#second").offset().top - 100 }, 200); 
+                $('html,body').animate({ scrollTop: $("#second").offset().top - 100 }, 200);
             });
 
             $("input[type='radio'][name='coffee']").change(function () {
@@ -312,21 +339,21 @@
                 var coffee = $("input[type='radio'][name='coffee']:checked").val();
                 var sauce = $("input[type='radio'][name='sauce']:checked").val();
 
-                if(!milk) {
+                if (!milk) {
                     alert("請選擇奶類");
                     //頁面跳轉至奶類
                     $('html,body').animate({ scrollTop: $("#first").offset().top - 100 }, 200);
                     return;
                 }
 
-                if(!coffee) {
+                if (!coffee) {
                     alert("請選擇濃縮");
                     //頁面跳轉至濃縮
                     $('html,body').animate({ scrollTop: $("#second").offset().top - 100 }, 200);
                     return;
                 }
 
-                if(!sauce) {
+                if (!sauce) {
                     alert("請選擇糖漿");
                     //頁面跳轉至糖漿
                     $('html,body').animate({ scrollTop: $("#third").offset().top - 100 }, 200);
@@ -334,14 +361,14 @@
                 }
 
                 if ($("input[type='radio'][name='milk']:checked").lenghth != 0 && $("input[type='radio'][name='coffee']:checked").lenghth != 0 && $("input[type='radio'][name='sauce']:checked").lenghth != 0) {
-                    if(milk == 0) {
+                    if (milk == 0) {
                         milk = "";
                     }
 
-                    if(coffee == 0) {
+                    if (coffee == 0) {
                         coffee = "";
                     }
-                    
+
                     var result = sauce + milk + coffee + "拿鐵";
                     $('#result-name').html(result);
 
@@ -378,7 +405,15 @@
             });
 
         })
+        function hamburger() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
 
+        }
     </script>
 
 </body>

@@ -1,0 +1,36 @@
+/* 選單 */
+/* Style the navigation menu */
+.topnav {
+    overflow: hidden;
+    background-color: #c6ac8f;
+    position: relative;
+  }
+  
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  /* Style navigation menu links */
+  .topnav a {
+    color:#ffffff;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  /* Style the hamburger menu */
+  .topnav a.icon {
+    background-color: #842B00;
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 10px;
+  }
+  .myLinks{
+    text-align: center;
+  }
+  
+/* 選單 */

@@ -7,8 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Sweeter</title>
     <link rel="icon" href="../img/logo.jpg"> <!-- 視窗icon -->
+
+
+     <!-- 漢堡 -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <!-- bookstrap
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
     <link rel="stylesheet" href="../css/productStyle.css">
     <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/選單.css">
     <!-- 字形 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +35,25 @@
 
 <body>
     <div class="container">
-
+        <div class="topnav">
+            <div class="header-left">
+                <a href="/index.html" style="padding: 0px;"><img class="logo" src="../img/logo.jpg" alt="none"
+                        class="header-photo-1"></a>
+            </div>
+            <!-- Navigation links (hidden by default) -->
+            <div id="myLinks" class="myLinks">
+                <a href="../html/product.html" class="nav-list-item-link">商品介紹</a>
+                <a href="../html/customizedProduction.html" class="nav-list-item-link">客製化商品</a>
+                <a href="" class="nav-list-item-link">顧客回饋</a>
+                <a class="cartLink" href="../html/cart.html"><img src="../img/cart.svg" alt=""></a>
+                <a class="loginLink" href="../html/login.html" class="nav-list-item-link"><img src="../img/login.svg"
+                        alt=""></a>
+            </div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="hamburger()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
         <header class="header">
 
 
@@ -58,11 +86,11 @@
 
         </header>
 
-        <div class="content-area row">
-            <div class="content">
-                <div class="content-photo  col-md-12 col-lg-4"><img src="../img/strawberry.jpg" alt="none"
+        <div class="content-area">
+           
+                <div class="content-photo"><img src="../img/strawberry.jpg" alt="none"
                         class="content-photo-1"></div>
-                <div class="content-product  col-md-12 col-lg-4">
+                <div class="content-product">
 
                     <span class="content-product-info">人氣商品 > 莓果塔<br></span>
                     <span class="content-product-title">莓果塔<br></span>
@@ -84,7 +112,7 @@
                         </div>
                         <button type="button" id="addCart">加入購物車</button>
                     </div>
-                </div>
+                
             </div>
             <div class="content-description">
                 <div class="contnent-decoration"></div>
@@ -184,12 +212,12 @@
                     alert("請先登入即可使用購物車");
                     window.location.href = "./login.html";
                 }
-                let docRef = cartRef.doc("allen@gmail.com");
+                let docRef = cartRef.doc(memberEmail);
 
                 // 傳至後台
                 docRef.set({
                     "price": $('.content-product-price').html().toString().substr(1),
-                    "product": "蘋果塔",
+                    "product": "莓果塔",
                     "quantity": $('.quantity_number').val()
                 })
                 .then(function () {
@@ -200,7 +228,15 @@
             })
 
         })
+        function hamburger() {
+                var x = document.getElementById("myLinks");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
 
+            }
     </script>
 
 </body>
